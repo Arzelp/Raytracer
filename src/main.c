@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 **
 ** Started on  Wed Dec  2 20:18:06 2015 Arnaud Alies
-** Last update Mon Apr 11 17:19:01 2016 alies_a
+** Last update Mon Apr 11 18:33:04 2016 alies_a
 */
 
 #include "rt.h"
@@ -42,14 +42,17 @@ int		main(int ac, char **av)
 
   (void)ac;
   (void)av;
-  if (cl_load(&(data.core), "./cl/pixelarray.cl",
-	      WIDTH * HEIGHT * sizeof(unsigned int)))
-    return (1);
   data.keys = NULL;
   if ((data.pix = bunny_new_pixelarray(WIDTH, HEIGHT)) == NULL)
     return (1);
   if ((data.win = bunny_start(WIDTH, HEIGHT, false, "ray")) == NULL)
     return (1);
+  //
+  if (cl_load(&(data.core), "./cl/pixelarray.cl",
+	      WIDTH * HEIGHT * sizeof(unsigned int)))
+    return (1);
+  cl_exec(&data, &(data.core));
+  //
   bunny_set_loop_main_function(loop);
   bunny_set_key_response(&key_listenner);
   bunny_loop(data.win, FPS, (void*)(&data));

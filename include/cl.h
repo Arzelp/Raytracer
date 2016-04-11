@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Mon Apr 11 16:36:57 2016 alies_a
-** Last update Mon Apr 11 17:02:49 2016 alies_a
+** Last update Mon Apr 11 18:19:36 2016 alies_a
 */
 
 #ifndef CL_H_
@@ -22,6 +22,7 @@ typedef struct s_core
   cl_context            context;
   cl_command_queue      command_queue;
   cl_mem                buffer;
+  size_t		buffer_size;
   cl_program            program;
 } t_core;
 

@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Mon Apr 11 16:51:00 2016 alies_a
-** Last update Mon Apr 11 17:17:31 2016 alies_a
+** Last update Mon Apr 11 18:14:51 2016 alies_a
 */
 
 #include "rt.h"
@@ -33,31 +33,26 @@ static char	*load_file(const char *name, size_t *src_size)
   return (src_str);
 }
 
-int	cl_load(t_core *core, const char *file, size_t buffersize)
+int	cl_load(t_core *core, const char *file, size_t buffer_size)
 {
   cl_int                ret;
   char                  *src_str;
   size_t                src_size;
 
+  core->buffer_size = buffer_size;
   if ((src_str = load_file(file, &src_size)) == NULL)
     return (1);
-
   ret = clGetPlatformIDs(1, &(core->platform_id), &(core->num_platform));
   ret = clGetDeviceIDs(core->platform_id, CL_DEVICE_TYPE_DEFAULT, 1,
 		       &(core->device_id), &(core->num_device));
-
   core->context = clCreateContext(NULL, 1, &(core->device_id), NULL, NULL, &ret);
-  core->command_queue = clCreateCommandQueue(core->context, core->device_id, 0, &ret);
-
+  core->command_queue = clCreateCommandQueue(core->context, core->device_id,
+					     CL_QUEUE_OUT_OF_ORDER_EXEC_MODE_ENABLE, &ret);
   core->buffer = clCreateBuffer(core->context, CL_MEM_READ_WRITE,
-				buffersize, NULL, &ret);
-
-  core->program = clCreateProgramWithSource(core->context,
-					    1,
+				buffer_size, NULL, &ret);
+  core->program = clCreateProgramWithSource(core->context, 1,
 					    (const char **)&src_str,
-					    (const size_t *)&src_size,
-					    &ret);
-
+					    (const size_t *)&src_size, &ret);
   ret = clBuildProgram((core->program), 1, &(core->device_id), NULL, NULL, NULL);
   return (0);
 }

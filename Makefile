@@ -5,7 +5,7 @@
 ## Login   <alies_a@epitech.net>
 ## 
 ## Started on  Mon Apr 11 15:47:30 2016 alies_a
-## Last update Mon Apr 11 17:17:09 2016 alies_a
+## Last update Mon Apr 11 18:16:41 2016 alies_a
 ##
 
 NAME    =       raytracer2
@@ -29,7 +29,8 @@ SRC	=	./src/
 CL	=	./src/cl/
 
 SRCS	=	$(SRC)main.c \
-		$(CL)load.c
+		$(CL)load.c \
+		$(CL)exec.c
 
 OBJS	=	$(SRCS:.c=.o)
 

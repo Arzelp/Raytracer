@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Mon Apr 11 15:51:25 2016 alies_a
-** Last update Mon Apr 11 17:19:18 2016 alies_a
+** Last update Mon Apr 11 18:20:06 2016 alies_a
 */
 
 #ifndef RT_H_
@@ -25,5 +25,7 @@ typedef struct s_data
   const bool *keys;
   t_core core;
 } t_data;
+
+int	cl_exec(t_data *data, t_core *core);
 
 #endif
