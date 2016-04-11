@@ -5,7 +5,7 @@
 ## Login   <alies_a@epitech.net>
 ## 
 ## Started on  Mon Apr 11 15:47:30 2016 alies_a
-## Last update Mon Apr 11 15:53:12 2016 alies_a
+## Last update Mon Apr 11 17:17:09 2016 alies_a
 ##
 
 NAME    =       raytracer2
@@ -26,7 +26,10 @@ LDFLAGS	=	-I/home/${USER}/.froot/include \
 
 SRC	=	./src/
 
-SRCS	=	$(SRC)main.c
+CL	=	./src/cl/
+
+SRCS	=	$(SRC)main.c \
+		$(CL)load.c
 
 OBJS	=	$(SRCS:.c=.o)
 
