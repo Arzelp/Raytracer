@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Mon Apr 11 18:02:35 2016 alies_a
-** Last update Mon Apr 11 18:16:06 2016 alies_a
+** Last update Mon Apr 11 18:34:29 2016 alies_a
 */
 
 #include "rt.h"
@@ -14,7 +14,7 @@ int		cl_exec(t_data *data, t_core *core)
 {
   cl_int	ret;
   cl_kernel	kernel;
-  size_t	global_item_size = 100;
+  size_t	global_item_size = WIDTH * HEIGHT;
   size_t	local_item_size = 1;
 
   kernel = clCreateKernel(core->program, "calcpixel", &ret);
