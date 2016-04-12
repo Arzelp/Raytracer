@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 **
 ** Started on  Wed Dec  2 20:18:06 2015 Arnaud Alies
-** Last update Tue Apr 12 10:37:15 2016 alies_a
+** Last update Tue Apr 12 10:46:13 2016 alies_a
 */
 
 #include "rt.h"
@@ -14,6 +14,8 @@ static void	init_rt(t_rt *rt)
 {
   rt->width = WIDTH;
   rt->height = HEIGHT;
+
+  //rt->width = 0;
 }
 
 t_bunny_response key_listenner(t_bunny_event_state state,
