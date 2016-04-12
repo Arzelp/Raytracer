@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 **
 ** Started on  Wed Dec  2 20:18:06 2015 Arnaud Alies
-** Last update Tue Apr 12 16:30:45 2016 alies_a
+** Last update Tue Apr 12 16:35:18 2016 alies_a
 */
 
 #include "rt.h"
@@ -45,6 +45,15 @@ static t_bunny_response	loop(void *data_pt)
   zero.y = 0;
   data = (t_data*)data_pt;
   //data->rt.width += 1;
+  data->rt.cam.alpha += 0.1;
+  if (data->keys != NULL)
+    {
+      if (data->keys[BKS_LEFT])
+	data->rt.cam.alpha += 0.5;
+      if (data->keys[BKS_RIGHT])
+	data->rt.cam.alpha -= 0.5;
+      printf("%f\n", data->rt.cam.alpha);
+    }
   cl_exec(data, &(data->core));
   bunny_blit(&((data->win)->buffer), &((data->pix)->clipable), &zero);
   bunny_display(data->win);

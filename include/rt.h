@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Mon Apr 11 15:51:25 2016 alies_a
-** Last update Tue Apr 12 15:17:08 2016 alies_a
+** Last update Tue Apr 12 16:41:36 2016 alies_a
 */
 
 #ifndef RT_H_
@@ -15,8 +15,8 @@
 #include "cl.h"
 #include "my.h"
 
-#define WIDTH (500)
-#define HEIGHT (500)
+#define WIDTH (1000)
+#define HEIGHT (1000)
 #define FPS (30)
 
 typedef struct s_data
