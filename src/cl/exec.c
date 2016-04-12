@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Mon Apr 11 18:02:35 2016 alies_a
-** Last update Tue Apr 12 10:45:52 2016 alies_a
+** Last update Tue Apr 12 10:47:55 2016 alies_a
 */
 
 #include "rt.h"
@@ -33,5 +33,6 @@ int		cl_exec(t_data *data, t_core *core)
   ret = clEnqueueReadBuffer(core->command_queue, core->buffer, CL_TRUE, 0,
 			    core->buffer_size, data->pix->pixels, 0, NULL, NULL);
   ret = clReleaseKernel(kernel);
+  ret = clReleaseMemObject(mem);
   return (0);
 }
