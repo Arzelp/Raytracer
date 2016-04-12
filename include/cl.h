@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Mon Apr 11 16:36:57 2016 alies_a
-** Last update Mon Apr 11 18:19:36 2016 alies_a
+** Last update Mon Apr 11 20:18:54 2016 alies_a
 */
 
 #ifndef CL_H_
@@ -25,7 +25,5 @@ typedef struct s_core
   size_t		buffer_size;
   cl_program            program;
 } t_core;
-
-int	cl_load(t_core *core, const char *file, size_t buffersize);
 
 #endif

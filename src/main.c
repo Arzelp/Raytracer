@@ -5,10 +5,16 @@
 ** Login   <alies_a@epitech.net>
 **
 ** Started on  Wed Dec  2 20:18:06 2015 Arnaud Alies
-** Last update Mon Apr 11 18:33:04 2016 alies_a
+** Last update Tue Apr 12 10:37:15 2016 alies_a
 */
 
 #include "rt.h"
+
+static void	init_rt(t_rt *rt)
+{
+  rt->width = WIDTH;
+  rt->height = HEIGHT;
+}
 
 t_bunny_response key_listenner(t_bunny_event_state state,
 			       t_bunny_keysym keysym,
@@ -42,6 +48,7 @@ int		main(int ac, char **av)
 
   (void)ac;
   (void)av;
+  init_rt(&(data.rt));
   data.keys = NULL;
   if ((data.pix = bunny_new_pixelarray(WIDTH, HEIGHT)) == NULL)
     return (1);

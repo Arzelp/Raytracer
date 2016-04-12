@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Mon Apr 11 18:02:35 2016 alies_a
-** Last update Mon Apr 11 18:34:29 2016 alies_a
+** Last update Tue Apr 12 10:28:31 2016 alies_a
 */
 
 #include "rt.h"
@@ -14,17 +14,24 @@ int		cl_exec(t_data *data, t_core *core)
 {
   cl_int	ret;
   cl_kernel	kernel;
-  size_t	global_item_size = WIDTH * HEIGHT;
-  size_t	local_item_size = 1;
+  cl_mem	mem;
+  size_t	global_item_size;
+  size_t	local_item_size;
+  
+  global_item_size = WIDTH * HEIGHT;
+  local_item_size = 1;
 
+  mem = clCreateBuffer(core->context, 0,
+		       sizeof(t_rt), &(data->rt), &ret);
+  
   kernel = clCreateKernel(core->program, "calcpixel", &ret);
   ret = clSetKernelArg(kernel, 0, sizeof(cl_mem), (void*)&(core->buffer));
+  ret = clSetKernelArg(kernel, 1, sizeof(cl_mem), (void*)&mem);
   
-  /* Execute OpenCL kernel as data parallel */
   ret = clEnqueueNDRangeKernel(core->command_queue, kernel, 1, NULL,
 			       &global_item_size, &local_item_size, 0, NULL, NULL);
-  
-  /* Copy results from the memory buffer */
   ret = clEnqueueReadBuffer(core->command_queue, core->buffer, CL_TRUE, 0,
 			    core->buffer_size, data->pix->pixels, 0, NULL, NULL);
+  ret = clReleaseKernel(kernel);
+  return (0);
 }
