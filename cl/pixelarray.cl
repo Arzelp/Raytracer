@@ -76,7 +76,56 @@ t_ray		get_ray(t_cam me,
   return (ray);
 }
 
+float   det(float a, float b, float c)
+{
+  return (pow(b, (float)2) - (4 * a * c));
+}
 
+t_vec   equ_para(t_ray ray, float t1)
+{
+  t_vec res;
+
+  res.x = (ray.alpha).x + (ray.beta).x * t1;
+  res.y = (ray.alpha).y + (ray.beta).y * t1;
+  res.z = (ray.alpha).z + (ray.beta).z * t1;
+  return (res);
+}
+
+t_hit           sphere(t_ray ray,
+		       int size)
+{
+  t_hit         res;
+  t_cal         calc;
+  t_vec		pos;
+
+  pos.x = 0;
+  pos.y = 0;
+  pos.z = 0;
+
+  calc.a = (pow((ray.beta).x, 2) + pow((ray.beta).y, 2) +
+	    pow((ray.beta).z, 2));
+  /*
+  calc.b = 2 * (((ray.beta).x) * ((ray.alpha).x - (obj->pos).x) +
+		((ray.beta).y) * ((ray.alpha).y - (obj->pos).y) +
+		((ray.beta).z) * ((ray.alpha).z - (obj->pos).z));
+  calc.c = pow((ray.alpha).x, 2) + pow((ray.alpha).y, 2) +
+    pow((ray.alpha).z, 2) + pow((obj->pos).x, 2) +
+    pow((obj->pos).y, 2) + pow((obj->pos).z, 2) - 2 *
+    (((ray.alpha).x * (obj->pos).x) + ((ray.alpha).y * (obj->pos).y) +
+     ((ray.alpha).z * (obj->pos).z)) - pow(obj->size, 2);
+  calc.d = det(calc.a, calc.b, calc.c);
+  res.hit = 0;
+  if (calc.d < 0)
+    return (res);
+  calc.t1 = (-calc.b + sqrt(calc.d)) / (2 * calc.a);
+  calc.t2 = (-calc.b - sqrt(calc.d)) / (2 * calc.a);
+  if (calc.t1 < 0 || calc.t2 < 0)
+    return (res);
+  res.hitpos = equ_para(ray, (calc.t1 > calc.t2 ? calc.t2 : calc.t1));
+  //set_hit_info(&res, &(ray.alpha), obj);
+  */
+  return (res);
+}
 
 t_color set_color(t_color c, int x, int y, t_rt rt)
 {
