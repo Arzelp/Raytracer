@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Mon Apr 11 16:36:57 2016 alies_a
-** Last update Tue Apr 12 15:46:29 2016 alies_a
+** Last update Tue Apr 12 15:49:37 2016 alies_a
 */
 
 #ifndef CL_H_
@@ -56,6 +56,16 @@ typedef struct s_cam
   cl_float alpha;
   cl_float beta;
 } t_cam;
+
+typedef struct s_cal
+{
+  cl_float a;
+  cl_float b;
+  cl_float c;
+  cl_float d;
+  cl_float t1;
+  cl_float t2;
+} t_cal;
 
 typedef struct s_hit
 {

@@ -22,6 +22,16 @@ typedef struct s_cam
   float beta;
 } t_cam;
 
+typedef struct s_cal
+{
+  float	a;
+  float	b;
+  float	c;
+  float	d;
+  float	t1;
+  float	t2;
+} t_cal;
+
 typedef struct s_hit
 {
   t_vec	hitpos;
@@ -77,14 +87,11 @@ __kernel void calcpixel(__global unsigned int *pixels,
 			__constant t_rt *rt)
 {
   int id = get_global_id(0);
-  int x;
-  int y;
+  int x = id / rt->width;
+  int y = id % rt->width;
+  
   t_color c;
   c.full = 17777215;
-
-  y = id / rt->width;
-  x = id % rt->width;
-
   c = set_color(c, x, y, *rt);
   pixels[id] = c.full;
 }
