@@ -104,15 +104,17 @@ t_hit           sphere(t_ray ray,
 
   calc.a = (pow((ray.beta).x, 2) + pow((ray.beta).y, 2) +
 	    pow((ray.beta).z, 2));
+  
+  calc.b = 2 * (((ray.beta).x) * ((ray.alpha).x - pos.x) +
+		((ray.beta).y) * ((ray.alpha).y - pos.y) +
+		((ray.beta).z) * ((ray.alpha).z - pos.z));
+  
+  calc.c = pow((ray.alpha).x, 2.0) + pow((ray.alpha).y, 2.0) +
+    pow((ray.alpha).z, 2.0) + pow(pos.x, 2.0) +
+    pow(pos.y, 2.0) + pow(pos.z, 2.0) - 2 *
+    (((ray.alpha).x * pos.x) + ((ray.alpha).y * pos.y) +
+     ((ray.alpha).z * pos.z)) - pow(size, 2.0);
   /*
-  calc.b = 2 * (((ray.beta).x) * ((ray.alpha).x - (obj->pos).x) +
-		((ray.beta).y) * ((ray.alpha).y - (obj->pos).y) +
-		((ray.beta).z) * ((ray.alpha).z - (obj->pos).z));
-  calc.c = pow((ray.alpha).x, 2) + pow((ray.alpha).y, 2) +
-    pow((ray.alpha).z, 2) + pow((obj->pos).x, 2) +
-    pow((obj->pos).y, 2) + pow((obj->pos).z, 2) - 2 *
-    (((ray.alpha).x * (obj->pos).x) + ((ray.alpha).y * (obj->pos).y) +
-     ((ray.alpha).z * (obj->pos).z)) - pow(obj->size, 2);
   calc.d = det(calc.a, calc.b, calc.c);
   res.hit = 0;
   if (calc.d < 0)
