@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 **
 ** Started on  Wed Dec  2 20:18:06 2015 Arnaud Alies
-** Last update Tue Apr 12 14:45:16 2016 alies_a
+** Last update Tue Apr 12 15:17:16 2016 alies_a
 */
 
 #include "rt.h"
@@ -44,6 +44,8 @@ static t_bunny_response	loop(void *data_pt)
   zero.x = 0;
   zero.y = 0;
   data = (t_data*)data_pt;
+  //data->rt.width += 1;
+  cl_exec(data, &(data->core));
   bunny_blit(&((data->win)->buffer), &((data->pix)->clipable), &zero);
   bunny_display(data->win);
   return (GO_ON);
@@ -65,7 +67,6 @@ int		main(int ac, char **av)
   if (cl_load(&(data.core), "./cl/pixelarray.cl",
 	      WIDTH * HEIGHT * sizeof(unsigned int)))
     return (1);
-  cl_exec(&data, &(data.core));
   //
   bunny_set_loop_main_function(loop);
   bunny_set_key_response(&key_listenner);
