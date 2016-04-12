@@ -22,12 +22,12 @@ typedef struct s_cam
   float beta;
 } t_cam;
 
-typedef struct s_rt
+typedef struct s_hit
 {
-  int width;
-  int height;
-  t_cam cam;
-} t_rt;
+  t_vec	hitpos;
+  float	norm;
+  int	hit;
+} t_hit;
 
 typedef union u_color
 {
@@ -35,29 +35,12 @@ typedef union u_color
   char argb[4];
 } t_color;
 
-
-/*
-static void     get_ray(const t_cam *me,
-			const t_bunny_position *sr,
-			t_ray *ray)
+typedef struct s_rt
 {
-  t_vec         res;
-  double        beta;
-
-  beta = -me->beta;
-  res.x = sqrt(pow(HEIGHT, 2) + pow(WIDTH, 2));
-  res.y = ((WIDTH / 2) - (double)sr->x);
-  res.z = ((HEIGHT / 2) - (double)sr->y);
-  ray->beta.x = res.x * cos(beta) + res.z * sin(beta);
-  ray->beta.z = res.z * cos(beta) - res.x * sin(beta);
-  res.x = ray->beta.x;
-  ray->beta.x = res.x * cos(me->alpha) - res.y * sin(me->alpha);
-  ray->beta.y = res.x * sin(me->alpha) + res.y * cos(me->alpha);
-  ray->alpha.x = me->pos.x;
-  ray->alpha.y = me->pos.y;
-  ray->alpha.z = me->pos.z;
-}*/
-
+  int width;
+  int height;
+  t_cam cam;
+} t_rt;
 
 t_ray		get_ray(t_cam me,
 			int x,
