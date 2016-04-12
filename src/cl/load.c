@@ -5,32 +5,31 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Mon Apr 11 16:51:00 2016 alies_a
-** Last update Mon Apr 11 18:14:51 2016 alies_a
+** Last update Tue Apr 12 11:41:14 2016 alies_a
 */
 
 #include "rt.h"
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 
 #define SRC "./cl/pixelarray.cl"
-#define SRC_SIZE (0x100000)
-
-#define MEM_SIZE (128)
 
 static char	*load_file(const char *name, size_t *src_size)
 {
-  FILE		*fp;
-  char		*src_str;
+  int		fd;
+  char		*res;
 
-  *src_size = 0;
-  if ((fp = fopen(name, "r")) == NULL)
+  if ((fd = open(name, O_RDONLY)) == -1)
     return (NULL);
-  if ((src_str = malloc(sizeof(char) * SRC_SIZE)) == NULL)
-    return (NULL);
-  *src_size = fread(src_str, 1, SRC_SIZE, fp);
-  fclose(fp);
-  return (src_str);
+  res = get_next_line(fd);
+  *src_size = my_strlen(res);
+  close(fd);
+  return (res);
 }
 
 int	cl_load(t_core *core, const char *file, size_t buffer_size)
@@ -54,5 +53,6 @@ int	cl_load(t_core *core, const char *file, size_t buffer_size)
 					    (const char **)&src_str,
 					    (const size_t *)&src_size, &ret);
   ret = clBuildProgram((core->program), 1, &(core->device_id), NULL, NULL, NULL);
+  free(src_str);
   return (0);
 }

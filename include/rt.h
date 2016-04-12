@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Mon Apr 11 15:51:25 2016 alies_a
-** Last update Tue Apr 12 11:29:34 2016 alies_a
+** Last update Tue Apr 12 11:33:00 2016 alies_a
 */
 
 #ifndef RT_H_
@@ -13,6 +13,7 @@
 
 #include <lapin.h>
 #include "cl.h"
+#include "my.h"
 
 #define WIDTH (500)
 #define HEIGHT (500)
