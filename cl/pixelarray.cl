@@ -2,22 +2,22 @@
 #define MAP(x, sA, eA, sB, eB) ((((sA - x) / (sA - eA)) * (eB - sB)) + sB)
 #define ABS(x) ((x) < 0 ? -(x) : (x))
 
-typedef struct s_pos
+typedef struct s_vec
 {
   float x;
   float y;
   float z;
-} t_pos;
+} t_vec;
 
 typedef struct s_ray
 {
-  t_pos alpha;
-  t_pos beta;
+  t_vec alpha;
+  t_vec beta;
 } t_ray;
 
 typedef struct s_cam
 {
-  t_pos pos;
+  t_vec pos;
   float alpha;
   float beta;
 } t_cam;
@@ -57,6 +57,31 @@ static void     get_ray(const t_cam *me,
   ray->alpha.y = me->pos.y;
   ray->alpha.z = me->pos.z;
 }*/
+
+
+t_ray		get_ray(t_cam me,
+			int x,
+			int y,
+			t_rt rt)
+{
+  t_ray		ray;
+  t_vec         res;
+  float		beta;
+
+  beta = -me.beta;
+  res.x = sqrt(pow((float)rt.height, (float)2) + pow((float)rt.width, (float)2));
+  res.y = ((rt.width / 2) - x);
+  res.z = ((rt.height / 2) - y);
+  ray.beta.x = res.x * cos(beta) + res.z * sin(beta);
+  ray.beta.z = res.z * cos(beta) - res.x * sin(beta);
+  res.x = ray.beta.x;
+  ray.beta.x = res.x * cos(me.alpha) - res.y * sin(me.alpha);
+  ray.beta.y = res.x * sin(me.alpha) + res.y * cos(me.alpha);
+  ray.alpha.x = me.pos.x;
+  ray.alpha.y = me.pos.y;
+  ray.alpha.z = me.pos.z;
+  return (ray);
+}
 
 t_color set_color(t_color c, int x, int y, t_rt rt)
 {
