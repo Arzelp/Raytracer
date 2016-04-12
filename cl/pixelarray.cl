@@ -104,7 +104,7 @@ float	vec_norm(t_vec Va, t_vec Vb)
 }
 
 t_hit           sphere(t_ray ray,
-		       int size)
+		       float size)
 {
   t_hit         res;
   t_cal         calc;
@@ -154,9 +154,20 @@ __kernel void calcpixel(__global unsigned int *pixels,
   int id = get_global_id(0);
   int x = id / rt->width;
   int y = id % rt->width;
-  
   t_color c;
+  
+  /*
   c.full = 17777215;
   c = set_color(c, x, y, *rt);
+  */
+
+  t_ray ray;
+  t_hit hit;
+  ray = get_ray(rt->cam, x, y, *rt);
+  hit = sphere(ray, 1.0);
+  if (hit.hit == 1)
+    c.full = 17777215;
+  else
+    c.full = 13777215;
   pixels[id] = c.full;
 }
