@@ -91,6 +91,18 @@ t_vec   equ_para(t_ray ray, float t1)
   return (res);
 }
 
+float	vec_norm(t_vec Va, t_vec Vb)
+{
+  float	a;
+  float	b;
+  float	c;
+
+  a = Vb.x - Va.x;
+  b = Vb.y - Va.y;
+  c = Vb.z - Va.z;
+  return (sqrt(pow(a, 2.0) + pow(b, 2.0) + pow(c, 2.0)));
+}
+
 t_hit           sphere(t_ray ray,
 		       int size)
 {
@@ -114,7 +126,6 @@ t_hit           sphere(t_ray ray,
     pow(pos.y, 2.0) + pow(pos.z, 2.0) - 2 *
     (((ray.alpha).x * pos.x) + ((ray.alpha).y * pos.y) +
      ((ray.alpha).z * pos.z)) - pow(size, 2.0);
-  /*
   calc.d = det(calc.a, calc.b, calc.c);
   res.hit = 0;
   if (calc.d < 0)
@@ -125,7 +136,8 @@ t_hit           sphere(t_ray ray,
     return (res);
   res.hitpos = equ_para(ray, (calc.t1 > calc.t2 ? calc.t2 : calc.t1));
   //set_hit_info(&res, &(ray.alpha), obj);
-  */
+  res.hit = 1;
+  res.norm = vec_norm(ray.alpha, res.hitpos);
   return (res);
 }
 
