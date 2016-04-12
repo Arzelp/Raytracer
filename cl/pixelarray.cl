@@ -76,6 +76,8 @@ t_ray		get_ray(t_cam me,
   return (ray);
 }
 
+
+
 t_color set_color(t_color c, int x, int y, t_rt rt)
 {
   c.argb[1] = MAP((float)x, 0, rt.width, 0, 255);
