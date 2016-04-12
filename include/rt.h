@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Mon Apr 11 15:51:25 2016 alies_a
-** Last update Tue Apr 12 11:33:00 2016 alies_a
+** Last update Tue Apr 12 13:19:37 2016 alies_a
 */
 
 #ifndef RT_H_
@@ -18,17 +18,6 @@
 #define WIDTH (500)
 #define HEIGHT (500)
 #define FPS (30)
-
-/*
-** Struct rt defines all data needed to render
-** Do not edit it unless you know what you are doing
-*/
-
-typedef struct s_rt
-{
-  cl_int	width;
-  cl_int	height;
-} t_rt;
 
 typedef struct s_data
 {

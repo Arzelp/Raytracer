@@ -2,12 +2,6 @@
 #define MAP(x, sA, eA, sB, eB) ((((sA - x) / (sA - eA)) * (eB - sB)) + sB)
 #define ABS(x) ((x) < 0 ? -(x) : (x))
 
-typedef struct s_rt
-{
-  int width;
-  int height;
-} t_rt;
-
 typedef struct s_pos
 {
   float x;
@@ -20,6 +14,14 @@ typedef struct s_ray
   t_pos alpha;
   t_pos beta;
 } t_ray;
+
+
+typedef struct s_rt
+{
+  int width;
+  int height;
+  t_ray cam;
+} t_rt;
 
 typedef union u_color
 {

@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Mon Apr 11 18:02:35 2016 alies_a
-** Last update Tue Apr 12 10:47:55 2016 alies_a
+** Last update Tue Apr 12 13:28:35 2016 alies_a
 */
 
 #include "rt.h"
@@ -26,7 +26,7 @@ int		cl_exec(t_data *data, t_core *core)
   
   kernel = clCreateKernel(core->program, "calcpixel", &ret);
   ret = clSetKernelArg(kernel, 0, sizeof(cl_mem), (void*)&(core->buffer));
-  ret = clSetKernelArg(kernel, 1, sizeof(t_rt), (void*)&mem);
+  ret = clSetKernelArg(kernel, 1, sizeof(cl_mem), (void*)&mem);
   
   ret = clEnqueueNDRangeKernel(core->command_queue, kernel, 1, NULL,
 			       &global_item_size, &local_item_size, 0, NULL, NULL);
