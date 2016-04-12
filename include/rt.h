@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Mon Apr 11 15:51:25 2016 alies_a
-** Last update Tue Apr 12 13:19:37 2016 alies_a
+** Last update Tue Apr 12 14:06:56 2016 alies_a
 */
 
 #ifndef RT_H_
@@ -30,5 +30,6 @@ typedef struct s_data
 
 int     cl_load(t_core *core, const char *file, size_t buffer_size);
 int	cl_exec(t_data *data, t_core *core);
+int     cl_assert(int ret);
 
 #endif

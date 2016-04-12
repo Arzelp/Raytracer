@@ -29,6 +29,7 @@ typedef union u_color
   char argb[4];
 } t_color;
 
+
 /*
 static void     get_ray(const t_cam *me,
 			const t_bunny_position *sr,
@@ -51,6 +52,13 @@ static void     get_ray(const t_cam *me,
   ray->alpha.z = me->pos.z;
 }*/
 
+t_color set_color(t_color c, int x, int y, t_rt rt)
+{
+  c.argb[1] = MAP((float)x, 0, rt.width, 0, 255);
+  c.argb[0] = MAP((float)y, 0, rt.height, 0, 255);
+  return (c);
+}
+
 __kernel void calcpixel(__global unsigned int *pixels,
 			__constant t_rt *rt)
 {
@@ -62,8 +70,9 @@ __kernel void calcpixel(__global unsigned int *pixels,
 
   y = id / rt->width;
   x = id % rt->width;
-  
-  c.argb[1] = MAP((float)x, 0, rt->width, 0, 255);
-  c.argb[0] = MAP((float)y, 0, rt->height, 0, 255);
+
+  c = set_color(c, x, y, *rt);
+  //c.argb[1] = MAP((float)x, 0, rt->width, 0, 255);
+  //c.argb[0] = MAP((float)y, 0, rt->height, 0, 255);
   pixels[id] = c.full;
 }

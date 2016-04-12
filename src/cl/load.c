@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Mon Apr 11 16:51:00 2016 alies_a
-** Last update Tue Apr 12 11:41:14 2016 alies_a
+** Last update Tue Apr 12 14:07:20 2016 alies_a
 */
 
 #include "rt.h"
@@ -53,6 +53,7 @@ int	cl_load(t_core *core, const char *file, size_t buffer_size)
 					    (const char **)&src_str,
 					    (const size_t *)&src_size, &ret);
   ret = clBuildProgram((core->program), 1, &(core->device_id), NULL, NULL, NULL);
+  cl_assert(ret);
   free(src_str);
   return (0);
 }

@@ -5,7 +5,7 @@
 ## Login   <alies_a@epitech.net>
 ## 
 ## Started on  Mon Apr 11 15:47:30 2016 alies_a
-## Last update Tue Apr 12 11:29:24 2016 alies_a
+## Last update Tue Apr 12 13:57:27 2016 alies_a
 ##
 
 NAME    =       raytracer2
@@ -33,6 +33,7 @@ MY	=	./src/my/
 SRCS	=	$(SRC)main.c \
 		$(CL)load.c \
 		$(CL)exec.c \
+		$(CL)err.c \
 		$(MY)my_putchar.c \
                 $(MY)my_putstr.c \
                 $(MY)my_strcat.c \
