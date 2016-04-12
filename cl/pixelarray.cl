@@ -8,6 +8,19 @@ typedef struct s_rt
   int height;
 } t_rt;
 
+typedef struct s_pos
+{
+  float x;
+  float y;
+  float z;
+} t_pos;
+
+typedef struct s_ray
+{
+  t_pos alpha;
+  t_pos beta;
+} t_ray;
+
 typedef union u_color
 {
   int full;
@@ -44,16 +57,11 @@ __kernel void calcpixel(__global unsigned int *pixels,
   int y;
   t_color c;
   c.full = 17777215;
+
   y = id / rt->width;
   x = id % rt->width;
+  
   c.argb[1] = MAP((float)x, 0, rt->width, 0, 255);
   c.argb[0] = MAP((float)y, 0, rt->height, 0, 255);
-  
   pixels[id] = c.full;
-  /*
-  if (x > rt->width / 2)
-    pixels[id] = 13777215;
-  else
-    pixels[id] = 17777215;
-  */
 }
