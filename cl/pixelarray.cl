@@ -15,12 +15,18 @@ typedef struct s_ray
   t_pos beta;
 } t_ray;
 
+typedef struct s_cam
+{
+  t_pos pos;
+  float alpha;
+  float beta;
+} t_cam;
 
 typedef struct s_rt
 {
   int width;
   int height;
-  t_ray cam;
+  t_cam cam;
 } t_rt;
 
 typedef union u_color
@@ -72,7 +78,5 @@ __kernel void calcpixel(__global unsigned int *pixels,
   x = id % rt->width;
 
   c = set_color(c, x, y, *rt);
-  //c.argb[1] = MAP((float)x, 0, rt->width, 0, 255);
-  //c.argb[0] = MAP((float)y, 0, rt->height, 0, 255);
   pixels[id] = c.full;
 }

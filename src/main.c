@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 **
 ** Started on  Wed Dec  2 20:18:06 2015 Arnaud Alies
-** Last update Tue Apr 12 10:46:13 2016 alies_a
+** Last update Tue Apr 12 14:45:16 2016 alies_a
 */
 
 #include "rt.h"
@@ -14,7 +14,12 @@ static void	init_rt(t_rt *rt)
 {
   rt->width = WIDTH;
   rt->height = HEIGHT;
-
+  rt->cam.alpha = 0;
+  rt->cam.beta = 0;
+  rt->cam.pos.x = 0;
+  rt->cam.pos.y = 4;
+  rt->cam.pos.z = 0;
+  
   //rt->width = 0;
 }
 

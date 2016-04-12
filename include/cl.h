@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Mon Apr 11 16:36:57 2016 alies_a
-** Last update Tue Apr 12 14:03:26 2016 alies_a
+** Last update Tue Apr 12 14:44:09 2016 alies_a
 */
 
 #ifndef CL_H_
@@ -28,8 +28,8 @@ typedef struct s_core
 
 typedef struct s_cl_err
 {
-  const char	*err;
-  int		code;
+  const char *err;
+  int code;
 } t_cl_err;
 
 /*
@@ -50,11 +50,18 @@ typedef struct s_ray
   t_pos beta;
 } t_ray;
 
+typedef struct s_cam
+{
+  t_pos pos;
+  cl_float alpha;
+  cl_float beta;
+} t_cam;
+
 typedef struct s_rt
 {
-  cl_int        width;
-  cl_int        height;
-  t_ray		cam;
+  cl_int width;
+  cl_int height;
+  t_cam cam;
 } t_rt;
 
 #endif
