@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Wed Apr 13 17:18:37 2016 alies_a
-** Last update Wed Apr 13 18:06:36 2016 alies_a
+** Last update Wed Apr 13 18:27:36 2016 alies_a
 */
 
 #include <unistd.h>
@@ -34,7 +34,7 @@ t_jif   *jif_new(const char *file, int width, int height, int delay)
   if ((res = malloc(sizeof(t_jif))) == NULL)
     return (NULL);
   res->mode = J_WRITE;
-  if ((res->fd = open(file, O_RDONLY)) == -1)
+  if ((res->fd = open(file, O_CREAT | O_WRONLY | O_TRUNC)) == -1)
     {
       free(res);
       return (NULL);
