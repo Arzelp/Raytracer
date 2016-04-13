@@ -5,7 +5,7 @@
 ## Login   <alies_a@epitech.net>
 ## 
 ## Started on  Fri Jan 29 14:31:30 2016 alies_a
-## Last update Wed Apr 13 12:37:43 2016 alies_a
+## Last update Wed Apr 13 18:06:09 2016 alies_a
 ##
 
 NAME    =       gif
@@ -25,8 +25,11 @@ LDFLAGS	=	-I/home/${USER}/.froot/include \
 
 SRC	=	./src/
 
+JIF	=	./src/jif/
+
 SRCS	=	$(SRC)main.c \
-		$(SRC)tekpixel.c
+		$(SRC)tekpixel.c \
+		$(JIF)new.c
 
 OBJS	=	$(SRCS:.c=.o)
 

@@ -5,16 +5,16 @@
 ** Login   <alies_a@epitech.net>
 **
 ** Started on  Wed Dec  2 20:18:06 2015 Arnaud Alies
-** Last update Wed Apr 13 12:39:49 2016 alies_a
+** Last update Wed Apr 13 17:16:35 2016 alies_a
 */
 
 #include "info.h"
 
-t_bunny_response key_listenner(t_bunny_event_state state,
-			       t_bunny_keysym keysym,
-			       void *data_pt)
+t_bunny_response	key_listenner(t_bunny_event_state state,
+				      t_bunny_keysym keysym,
+				      void *data_pt)
 {
-  t_data        *data;
+  t_data		*data;
 
   data = (t_data*)data_pt;
   data->keys = bunny_get_keyboard();
