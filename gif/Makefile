@@ -5,7 +5,7 @@
 ## Login   <alies_a@epitech.net>
 ## 
 ## Started on  Fri Jan 29 14:31:30 2016 alies_a
-## Last update Thu Apr 14 18:39:51 2016 alies_a
+## Last update Thu Apr 14 20:26:40 2016 alies_a
 ##
 
 NAME    =       gif
@@ -31,7 +31,9 @@ SRCS	=	$(SRC)main.c \
 		$(SRC)tekpixel.c \
 		$(JIF)new.c \
 		$(JIF)open.c \
-		$(JIF)add.c
+		$(JIF)add.c \
+		$(JIF)close.c \
+		$(JIF)next.c
 
 OBJS	=	$(SRCS:.c=.o)
 
