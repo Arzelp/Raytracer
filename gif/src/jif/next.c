@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Thu Apr 14 20:26:14 2016 alies_a
-** Last update Thu Apr 14 20:36:53 2016 alies_a
+** Last update Thu Apr 14 20:37:50 2016 alies_a
 */
 
 #include <unistd.h>
@@ -50,6 +50,9 @@ t_bunny_pixelarray	*jif_next(const t_jif *jif)
 				  (jif->head).height)) == NULL)
     return (NULL);
   if (jif_read(jif, res))
-    return (NULL);
+    {
+      bunny_delete_clipable(&(res->clipable));
+      return (NULL);
+    }
   return (res);
 }
