@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Wed Apr 13 17:17:18 2016 alies_a
-** Last update Wed Apr 13 18:04:32 2016 alies_a
+** Last update Thu Apr 14 18:25:38 2016 alies_a
 */
 
 #ifndef JIF_H_
@@ -14,8 +14,6 @@
 #include <stdint.h>
 #include <lapin.h>
 
-#define JIF_MAGIC (0x21)
-
 /*
 ** Jif lib
 ** save your pixelarrays in a file
@@ -23,7 +21,6 @@
 
 typedef struct s_jif_header
 {
-  char magic;
   uint32_t width;
   uint32_t height;
   uint32_t delay;
@@ -45,6 +42,7 @@ typedef enum e_jif_mode
 typedef struct s_jif
 {
   int fd;
+  t_jif_header head;
   t_jif_mode mode;
 } t_jif;
 

@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Wed Apr 13 17:18:37 2016 alies_a
-** Last update Wed Apr 13 18:27:36 2016 alies_a
+** Last update Thu Apr 14 18:23:43 2016 alies_a
 */
 
 #include <unistd.h>
@@ -14,15 +14,9 @@
 #include <fcntl.h>
 #include "jif.h"
 
-static int      jif_write_header(int fd, int width, int height, int delay)
+static int      jif_write_header(int fd, t_jif_header *header)
 {
-  t_jif_header	header;
-
-  header.magic = JIF_MAGIC;
-  header.width = width;
-  header.height = height;
-  header.delay = delay;
-  if (write(fd, &header, sizeof(t_jif_header)) != sizeof(t_jif_header))
+  if (write(fd, header, sizeof(t_jif_header)) != sizeof(t_jif_header))
     return (1);
   return (0);
 }
@@ -34,12 +28,15 @@ t_jif   *jif_new(const char *file, int width, int height, int delay)
   if ((res = malloc(sizeof(t_jif))) == NULL)
     return (NULL);
   res->mode = J_WRITE;
+  (res->head).width = width;
+  (res->head).height = height;
+  (res->head).delay = delay;
   if ((res->fd = open(file, O_CREAT | O_WRONLY | O_TRUNC)) == -1)
     {
       free(res);
       return (NULL);
     }
-  if (jif_write_header(res->fd, width, height, delay))
+  if (jif_write_header(res->fd, &(res->head)))
     {
       close(res->fd);
       free(res);
