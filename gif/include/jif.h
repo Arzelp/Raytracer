@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Wed Apr 13 17:17:18 2016 alies_a
-** Last update Thu Apr 14 18:25:38 2016 alies_a
+** Last update Thu Apr 14 18:34:29 2016 alies_a
 */
 
 #ifndef JIF_H_
@@ -50,14 +50,14 @@ typedef struct s_jif
 ** Write functions
 */
 t_jif *jif_new(const char *file, int width, int height, int delay);
-int jif_add(t_jif *jif, const t_bunny_pixelarray *pix);
+int jif_add(const t_jif *jif, const t_bunny_pixelarray *pix);
 
 /*
 ** Read functions
 */
 
 t_jif *jif_open(const char *file);
-t_bunny_pixelarray *jif_next(t_jif *jif);
+t_bunny_pixelarray *jif_next(const t_jif *jif);
 
 /*
 ** Other
