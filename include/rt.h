@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:34:35 2016 Arthur Josso
-** Last update Fri Apr 15 16:07:16 2016 alies_a
+** Last update Fri Apr 15 16:22:56 2016 Arthur Josso
 */
 
 #ifndef RT_H_
@@ -13,17 +13,17 @@
 
 #include "core.h"
 
-/*
 #define FULL_SCR (1)
 #define W_X (1920)
 #define W_Y (1080)
 #define FPS (40)
-*/
+
+/*
 #define FULL_SCR (0)
 #define W_X (1000)
 #define W_Y (1000)
 #define FPS (20)
-
+*/
 
 #define ANTI_ALIASING (3)
 
@@ -31,11 +31,11 @@ float	rot;
 
 typedef enum    e_is_gen
   {
-    IS_PREVIEW	= 0b00000001,
-    IS_PHONG	= 0b00000010,
-    IS_REFLEC	= 0b00000100,
-    IS_REFRAC	= 0b00001000,
-    IS_AA	= 0b00010000
+    IS_PREVIEW	= 1 << 0,
+    IS_PHONG	= 1 << 1,
+    IS_REFLEC	= 1 << 2,
+    IS_REFRAC	= 1 << 3,
+    IS_AA	= 1 << 4
   }             t_is_gen;
 
 /*
