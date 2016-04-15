@@ -5,12 +5,12 @@
 ## Login   <arthur.josso@epitech.eu>
 ## 
 ## Started on  Fri Jan 29 18:32:59 2016 Arthur Josso
-## Last update Thu Apr 14 13:13:54 2016 Arthur Josso
+## Last update Fri Apr 15 12:50:53 2016 Arthur Josso
 ##
 
 NAME    =	raytracer1
 
-CC	= 	gcc
+CC	= 	gcc -g
 
 INC     =       ./include/
 

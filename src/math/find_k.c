@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Jan 30 19:51:49 2016 Arthur Josso
-** Last update Thu Apr 14 17:34:30 2016 Arthur Josso
+** Last update Fri Apr 15 12:52:40 2016 Arthur Josso
 */
 
 #include <stdlib.h>
@@ -32,6 +32,9 @@ static void	find_k_ground(t_ray *ray, t_hit *hit)
 	  hit->meta.mirroring = 0.4;
 	  hit->meta.refrac.ratio = 0;
 	  hit->meta.perlin.ratio = 0;
+	  hit->meta.rot.x = 0;
+	  hit->meta.rot.y = 0;
+	  hit->meta.rot.z = 0;
 	}
     }
 }
@@ -47,7 +50,8 @@ void    find_hit(t_data *data, t_ray *ray, t_hit *hit)
   find_k_torus(ray, &data->obj, hit);
   find_k_ground(ray, hit);
   hit->pt = get_pt_with_k(hit->k, ray);
-  hit->rot_pt = get_rot_vec(hit->pt, &hit->meta.rot);
+  if (hit->obj_type != NONE)
+    hit->rot_pt = get_rot_vec(hit->pt, &hit->meta.rot);
   if (hit->obj_type != NONE && hit->meta.perlin.ratio
       && hit->meta.perlin.type != 2)
     hit->meta.color = get_perlin_at(&hit->pt, &hit->meta);
