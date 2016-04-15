@@ -5,10 +5,10 @@
 ## Login   <alies_a@epitech.net>
 ## 
 ## Started on  Fri Jan 29 14:31:30 2016 alies_a
-## Last update Thu Apr 14 20:26:40 2016 alies_a
+## Last update Fri Apr 15 13:08:13 2016 alies_a
 ##
 
-NAME    =       gif
+NAME    =       jif
 
 CC	=	gcc -g
 

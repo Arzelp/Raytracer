@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Wed Apr 13 17:17:18 2016 alies_a
-** Last update Fri Apr 15 11:17:58 2016 alies_a
+** Last update Fri Apr 15 12:58:29 2016 alies_a
 */
 
 #ifndef JIF_H_
@@ -50,7 +50,8 @@ int jif_add(const t_jif *jif, const t_bunny_pixelarray *pix);
 */
 
 t_jif *jif_open(const char *file);
-t_bunny_pixelarray *jif_next(const t_jif *jif);
+t_bunny_pixelarray *jif_next_load(const t_jif *jif);
+int jif_next_fill(const t_jif *jif, t_bunny_pixelarray *pix);
 
 /*
 ** Other
