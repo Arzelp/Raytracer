@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:34:35 2016 Arthur Josso
-** Last update Fri Apr 15 15:24:33 2016 Arthur Josso
+** Last update Fri Apr 15 16:07:16 2016 alies_a
 */
 
 #ifndef RT_H_
@@ -20,8 +20,8 @@
 #define FPS (40)
 */
 #define FULL_SCR (0)
-#define W_X (300)
-#define W_Y (300)
+#define W_X (1000)
+#define W_Y (1000)
 #define FPS (20)
 
 
@@ -201,5 +201,11 @@ t_color get_color(t_color *src, float coef);
 */
 
 void	exit_prog(t_data *data);
+
+/*
+** Video jif
+*/
+
+int	jif_gen(t_data *data);
 
 #endif

@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:33:22 2016 Arthur Josso
-** Last update Fri Apr 15 15:34:31 2016 alies_a
+** Last update Fri Apr 15 16:03:10 2016 alies_a
 */
 
 #include "rt.h"
@@ -49,10 +49,14 @@ t_bunny_response        mainloop(void *pt_data)
     }
   else
     {
-      data->pix= data->big;
+      data->pix = data->big;
       gen_scene(data);
       data->gen_type ^= IS_PREVIEW;
     }
+  //
+  if (jif_path_write(data->path, &(data->obj.cam)))
+    return (EXIT_ON_ERROR);
+  //
   bunny_blit(&data->win->buffer, &data->big->clipable, &origin);
   bunny_blit(&data->win->buffer, &data->small->clipable, &origin);
   bunny_display(data->win);
@@ -87,6 +91,7 @@ int		main(int ac, char **av)
 
   data.path = NULL;
   data.jif = NULL;
+  rot = 0;
   if (setup(ac, av, &data) == ERROR)
     return (ERROR);
   if (data.path == NULL)
@@ -94,7 +99,8 @@ int		main(int ac, char **av)
       if ((data.path = jif_path_open("camera.path", J_WRITE)) == NULL)
 	return (ERROR);
     }
-  rot = 0;
+  if (data.jif != NULL)
+    jif_gen(&data);
   bunny_set_key_response(&press_key);
   bunny_set_loop_main_function(mainloop);
   bunny_loop(data.win, FPS, &data);

@@ -5,7 +5,7 @@
 ## Login   <arthur.josso@epitech.eu>
 ## 
 ## Started on  Fri Jan 29 18:32:59 2016 Arthur Josso
-## Last update Fri Apr 15 15:24:48 2016 Arthur Josso
+## Last update Fri Apr 15 15:59:58 2016 alies_a
 ##
 
 NAME    =	raytracer1
@@ -106,6 +106,7 @@ SRC	= 	$(SRCS)main.c \
 		$(JIF)path_close.c \
 		$(JIF)path_read.c \
 		$(JIF)path_write.c \
+		$(JIF)gen.c \
 		$(MY)my_getnbr.c \
 		$(MY)my_getdouble.c \
 		$(MY)my_strcmp.c \
