@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Wed Apr 13 17:17:18 2016 alies_a
-** Last update Fri Apr 15 12:58:29 2016 alies_a
+** Last update Fri Apr 15 14:48:36 2016 alies_a
 */
 
 #ifndef JIF_H_
@@ -58,5 +58,22 @@ int jif_next_fill(const t_jif *jif, t_bunny_pixelarray *pix);
 */
 
 void jif_close(t_jif *jif);
+
+/*
+** Camera save
+*/
+
+typedef struct s_jif_path
+{
+  t_jif_mode mode;
+  int fd;
+} t_jif_path;
+
+t_jif_path *jif_path_open(const char *file, t_jif_mode mode);
+
+int jif_path_write(t_jif_path *path, const void *cam);
+int jif_path_read(t_jif_path *path, void *cam);
+
+void jif_path_close(t_jif_path *path);
 
 #endif

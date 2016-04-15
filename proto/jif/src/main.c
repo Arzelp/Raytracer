@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 **
 ** Started on  Wed Dec  2 20:18:06 2015 Arnaud Alies
-** Last update Fri Apr 15 11:32:54 2016 alies_a
+** Last update Fri Apr 15 13:07:24 2016 alies_a
 */
 
 #include "info.h"
@@ -50,8 +50,8 @@ static t_bunny_response	loop(void *data_pt)
     }
   else
     {
-      bunny_delete_clipable(&(data->pix->clipable));
-      if ((data->pix = jif_next(data->jif)) == NULL)
+      //bunny_delete_clipable(&(data->pix->clipable));
+      if (jif_next_fill(data->jif, data->pix))
 	return (EXIT_ON_SUCCESS);
     }
   bunny_blit(&((data->win)->buffer), &((data->pix)->clipable), &zero);

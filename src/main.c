@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:33:22 2016 Arthur Josso
-** Last update Fri Apr 15 12:58:55 2016 Arthur Josso
+** Last update Fri Apr 15 13:43:59 2016 alies_a
 */
 
 #include "rt.h"
@@ -59,13 +59,34 @@ t_bunny_response        mainloop(void *pt_data)
   return (GO_ON);
 }
 
+static int	setup(int ac, char **av, t_data *data)
+{
+  if (ac >= 2)
+    {
+      if (init(data, av[1]) == ERROR)
+	return (ERROR);
+      if (ac == 3)
+	{
+	  
+	}
+      else
+	{
+	  
+	}
+    }
+  else
+    {
+      if (init(data, "demo/demo1.ini") == ERROR)
+	return (ERROR);
+    }
+  return (SUCCESS);
+}
+
 int		main(int ac, char **av)
 {
   t_data	data;
 
-  if (ac == 1 && init(&data, "demo/demo1.ini") == ERROR)
-    return (ERROR);
-  else if (ac >= 2 && init(&data, av[1]) == ERROR)
+  if (setup(ac, av, &data) == ERROR)
     return (ERROR);
   rot = 0;
   bunny_set_key_response(&press_key);

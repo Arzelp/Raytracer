@@ -5,13 +5,14 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Feb 20 15:23:59 2016 Arthur Josso
-** Last update Fri Apr 15 12:58:34 2016 Arthur Josso
+** Last update Fri Apr 15 14:07:11 2016 alies_a
 */
 
 #ifndef CORE_H_
 # define CORE_H_
 
 #include <lapin.h>
+#include "jif.h"
 
 #define MAP(x, ba, ea, bb, eb) ((((ba - x) / (ba - ea)) * (eb - bb)) + bb)
 #define ABS(x) ((x) < 0 ? -(x) : (x))
@@ -37,7 +38,7 @@ typedef struct s_cam
 {
   t_vec pos;
   t_vec rot;
-} t_cam;
+} __attribute__((__packed__)) t_cam;
 
 typedef struct s_refrac
 {
@@ -124,6 +125,7 @@ typedef struct s_data
   t_bunny_pixelarray    *small;
   t_obj                 obj;
   unsigned char         gen_type;
+  t_jif_path		path;
 } t_data;
 
 typedef enum    e_exit

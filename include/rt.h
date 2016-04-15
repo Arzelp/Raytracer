@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:34:35 2016 Arthur Josso
-** Last update Fri Apr 15 13:46:22 2016 Arthur Josso
+** Last update Fri Apr 15 15:24:33 2016 Arthur Josso
 */
 
 #ifndef RT_H_
@@ -13,10 +13,18 @@
 
 #include "core.h"
 
+/*
 #define FULL_SCR (1)
 #define W_X (1920)
 #define W_Y (1080)
 #define FPS (40)
+*/
+#define FULL_SCR (0)
+#define W_X (300)
+#define W_Y (300)
+#define FPS (20)
+
+
 #define ANTI_ALIASING (3)
 
 float	rot;
