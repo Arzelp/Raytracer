@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:34:35 2016 Arthur Josso
-** Last update Thu Apr 14 17:07:15 2016 Arthur Josso
+** Last update Fri Apr 15 13:46:22 2016 Arthur Josso
 */
 
 #ifndef RT_H_
@@ -123,7 +123,13 @@ t_ray   get_rot_ray(t_ray ray, t_vec *angle);
 t_vec   get_rot_vec(t_vec vec, t_vec *angle);
 t_ray   get_trans_ray(t_ray ray, t_vec *angle);
 t_vec   get_trans_vec(t_vec vec, t_vec *angle);
+
+/*
+** Normal vec
+*/
+
 t_vec   get_normal_vec(t_hit *hit);
+t_vec	get_torus_n(t_hit *hit);
 
 /*
 ** Math - Vector

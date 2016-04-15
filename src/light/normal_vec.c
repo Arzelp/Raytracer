@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sun Jan 31 20:07:50 2016 Arthur Josso
-** Last update Thu Apr 14 17:18:59 2016 Arthur Josso
+** Last update Fri Apr 15 13:45:01 2016 Arthur Josso
 */
 
 #include <math.h>
@@ -61,24 +61,6 @@ static t_vec    get_cone(t_hit *hit)
   return (n);
 }
 
-static t_vec	get_torus(t_hit *hit)
-{
-  t_vec         n;
-  double	alpha;
-  t_torus	*torus;
-
-  torus = hit->obj;
-  alpha = torus->radius / sqrt(POW(hit->rot_pt.x) +
-			       POW(hit->rot_pt.y));
-  alpha = 1 - alpha;
-  n.x = alpha * hit->rot_pt.x;
-  n.y = alpha * hit->rot_pt.y;
-  n.z = hit->rot_pt.z;
-  set_uni_vec(&n);
-  rot_vec_inv(&n, &hit->meta.rot);
-  return (n);
-}
-
 t_vec   get_normal_vec(t_hit *hit)
 {
   t_vec n;
@@ -86,7 +68,7 @@ t_vec   get_normal_vec(t_hit *hit)
   if (hit->obj_type == GROUND)
     n = get_ground();
   else if (hit->obj_type == TORUS)
-    n = get_torus(hit);
+    n = get_torus_n(hit);
   else if (hit->obj_type == SPHERE)
     n = get_sphere(hit);
   else if (hit->obj_type == CYLINDER)
