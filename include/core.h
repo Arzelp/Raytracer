@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Feb 20 15:23:59 2016 Arthur Josso
-** Last update Fri Apr 15 14:07:11 2016 alies_a
+** Last update Fri Apr 15 15:07:34 2016 alies_a
 */
 
 #ifndef CORE_H_
@@ -125,7 +125,8 @@ typedef struct s_data
   t_bunny_pixelarray    *small;
   t_obj                 obj;
   unsigned char         gen_type;
-  t_jif_path		path;
+  t_jif_path		*path;
+  t_jif			*jif;
 } t_data;
 
 typedef enum    e_exit

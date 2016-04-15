@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:33:22 2016 Arthur Josso
-** Last update Fri Apr 15 13:43:59 2016 alies_a
+** Last update Fri Apr 15 16:03:10 2016 alies_a
 */
 
 #include "rt.h"
@@ -49,10 +49,14 @@ t_bunny_response        mainloop(void *pt_data)
     }
   else
     {
-      data->pix= data->big;
+      data->pix = data->big;
       gen_scene(data);
       data->gen_type ^= IS_PREVIEW;
     }
+  //
+  if (jif_path_write(data->path, &(data->obj.cam)))
+    return (EXIT_ON_ERROR);
+  //
   bunny_blit(&data->win->buffer, &data->big->clipable, &origin);
   bunny_blit(&data->win->buffer, &data->small->clipable, &origin);
   bunny_display(data->win);
@@ -67,11 +71,10 @@ static int	setup(int ac, char **av, t_data *data)
 	return (ERROR);
       if (ac == 3)
 	{
-	  
-	}
-      else
-	{
-	  
+	  if ((data->path = jif_path_open(av[2], J_READ)) == NULL)
+	    return (ERROR);
+	  if ((data->jif = jif_new("gen.jif", W_X, W_Y, 10)) == NULL)
+	    return (ERROR);
 	}
     }
   else
@@ -86,9 +89,18 @@ int		main(int ac, char **av)
 {
   t_data	data;
 
+  data.path = NULL;
+  data.jif = NULL;
+  rot = 0;
   if (setup(ac, av, &data) == ERROR)
     return (ERROR);
-  rot = 0;
+  if (data.path == NULL)
+    {
+      if ((data.path = jif_path_open("camera.path", J_WRITE)) == NULL)
+	return (ERROR);
+    }
+  if (data.jif != NULL)
+    jif_gen(&data);
   bunny_set_key_response(&press_key);
   bunny_set_loop_main_function(mainloop);
   bunny_loop(data.win, FPS, &data);
