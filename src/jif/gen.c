@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Fri Apr 15 15:54:21 2016 alies_a
-** Last update Fri Apr 15 16:05:14 2016 alies_a
+** Last update Fri Apr 15 16:47:38 2016 alies_a
 */
 
 #include "rt.h"
@@ -20,7 +20,9 @@ int	jif_gen(t_data *data)
     {
       data->pix = data->big;
       data->obj.cam = cam;
-      data->gen_type |= IS_PREVIEW;
+      data->gen_type = 255;
+      data->gen_type ^= IS_AA;
+      data->gen_type ^= IS_PREVIEW;
       gen_scene(data);
       if (jif_add(data->jif, data->pix))
 	return (1);

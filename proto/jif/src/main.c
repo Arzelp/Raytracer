@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 **
 ** Started on  Wed Dec  2 20:18:06 2015 Arnaud Alies
-** Last update Fri Apr 15 16:30:30 2016 alies_a
+** Last update Fri Apr 15 16:39:27 2016 alies_a
 */
 
 #include <unistd.h>
@@ -33,7 +33,11 @@ static t_bunny_response	loop(void *data_pt)
   zero.y = 0;
   data = (t_data*)data_pt;
   if (jif_next_fill(data->jif, data->pix))
-    return (EXIT_ON_SUCCESS);
+    {
+      jif_close(data->jif);
+      if ((data->jif = jif_open(data->name)) == NULL)
+	return (EXIT_ON_ERROR);
+    }
   bunny_blit(&((data->win)->buffer), &((data->pix)->clipable), &zero);
   bunny_display(data->win);
   return (GO_ON);
@@ -51,7 +55,8 @@ int		main(int ac, char **av)
       write(1, "PD\n", 3);
       return (1);
     }
-  if ((data.jif = jif_open(av[1])) == NULL)
+  data.name = av[1];
+  if ((data.jif = jif_open(data.name)) == NULL)
     return (1);
   if ((data.pix = bunny_new_pixelarray(data.jif->head.width,
 				       data.jif->head.height)) == NULL)

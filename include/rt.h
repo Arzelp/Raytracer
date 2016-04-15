@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:34:35 2016 Arthur Josso
-** Last update Fri Apr 15 16:22:56 2016 Arthur Josso
+** Last update Fri Apr 15 16:44:15 2016 alies_a
 */
 
 #ifndef RT_H_
@@ -16,14 +16,7 @@
 #define FULL_SCR (1)
 #define W_X (1920)
 #define W_Y (1080)
-#define FPS (40)
-
-/*
-#define FULL_SCR (0)
-#define W_X (1000)
-#define W_Y (1000)
-#define FPS (20)
-*/
+#define FPS (30)
 
 #define ANTI_ALIASING (3)
 
@@ -182,7 +175,7 @@ float	perlin(int *tab, t_vec *pt, float persistance);
 */
 
 #define MOVE (0.1)
-#define ROT (M_PI / 64)
+#define ROT (M_PI / 128)
 
 void    interact_cam(t_cam *cam);
 

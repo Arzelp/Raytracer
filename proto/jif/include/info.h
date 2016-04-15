@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Wed Apr 13 12:34:17 2016 alies_a
-** Last update Fri Apr 15 16:31:23 2016 alies_a
+** Last update Fri Apr 15 16:42:22 2016 alies_a
 */
 
 #ifndef INFO_H_
@@ -24,6 +24,7 @@ typedef struct s_data
   t_bunny_window *win;
   const bool *keys;
   t_jif *jif;
+  const char *name;
 } t_data;
 
 void    tekpixel(t_bunny_pixelarray *pix,
