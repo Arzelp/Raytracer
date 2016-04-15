@@ -5,7 +5,7 @@
 ## Login   <arthur.josso@epitech.eu>
 ## 
 ## Started on  Fri Jan 29 18:32:59 2016 Arthur Josso
-## Last update Fri Apr 15 12:50:53 2016 Arthur Josso
+## Last update Fri Apr 15 13:11:42 2016 alies_a
 ##
 
 NAME    =	raytracer1
@@ -46,6 +46,8 @@ EXIT	=	./src/exit/
 PERLIN	=	./src/perlin/
 
 SOLVER	=	./src/solver/
+
+JIF	=	./src/jif/
 
 SRC	= 	$(SRCS)main.c \
 		$(DISPLAY)thread.c \
@@ -94,6 +96,11 @@ SRC	= 	$(SRCS)main.c \
 		$(CORE)bump_vec.c \
 		$(PREVIEW)move.c \
 		$(EXIT)exit.c \
+		$(JIF)new.c \
+                $(JIF)open.c \
+                $(JIF)add.c \
+                $(JIF)close.c \
+                $(JIF)next.c \
 		$(MY)my_getnbr.c \
 		$(MY)my_getdouble.c \
 		$(MY)my_strcmp.c \
