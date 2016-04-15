@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Wed Apr 13 17:17:18 2016 alies_a
-** Last update Thu Apr 14 18:34:29 2016 alies_a
+** Last update Fri Apr 15 11:17:58 2016 alies_a
 */
 
 #ifndef JIF_H_
@@ -25,13 +25,6 @@ typedef struct s_jif_header
   uint32_t height;
   uint32_t delay;
 } __attribute__((packed)) t_jif_header;
-
-typedef struct s_jif_pix
-{
-  char r;
-  char g;
-  char b;
-} __attribute__((packed)) t_jif_pix;
 
 typedef enum e_jif_mode
   {

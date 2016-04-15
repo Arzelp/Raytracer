@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 **
 ** Started on  Wed Dec  2 20:18:06 2015 Arnaud Alies
-** Last update Thu Apr 14 20:49:30 2016 alies_a
+** Last update Fri Apr 15 11:32:54 2016 alies_a
 */
 
 #include "info.h"

@@ -5,38 +5,21 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Thu Apr 14 20:26:14 2016 alies_a
-** Last update Thu Apr 14 20:37:50 2016 alies_a
+** Last update Fri Apr 15 11:31:32 2016 alies_a
 */
 
 #include <unistd.h>
 #include "jif.h"
 
-static t_color	get_buff(t_jif_pix buff)
-{
-  t_color	res;
-
-  res.argb[0] = buff.r;
-  res.argb[1] = buff.g;
-  res.argb[2] = buff.b;
-  res.argb[3] = 255;
-  return (res);
-}
-
 static int	jif_read(const t_jif *jif, t_bunny_pixelarray *pix)
 {
   int		size;
-  int		pos;
-  t_jif_pix	buff;
+  unsigned int	r;
 
   size = (pix->clipable).clip_width * (pix->clipable).clip_height;
-  pos = 0;
-  while (pos < size)
-    {
-      if (read(jif->fd, &buff, sizeof(t_jif_pix)) != sizeof(t_jif_pix))
-	return (1);
-      ((t_color*)pix->pixels)[pos] = get_buff(buff);
-      pos += 1;
-    }
+  r = read(jif->fd, pix->pixels, sizeof(t_color) * size);
+  if (r != sizeof(t_color) * size)
+    return (1);
   return (0);
 }
 

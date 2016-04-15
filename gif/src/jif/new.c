@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Wed Apr 13 17:18:37 2016 alies_a
-** Last update Thu Apr 14 18:23:43 2016 alies_a
+** Last update Fri Apr 15 10:50:23 2016 alies_a
 */
 
 #include <unistd.h>
@@ -31,7 +31,7 @@ t_jif   *jif_new(const char *file, int width, int height, int delay)
   (res->head).width = width;
   (res->head).height = height;
   (res->head).delay = delay;
-  if ((res->fd = open(file, O_CREAT | O_WRONLY | O_TRUNC)) == -1)
+  if ((res->fd = open(file, O_CREAT | O_WRONLY | O_TRUNC, 0666)) == -1)
     {
       free(res);
       return (NULL);
