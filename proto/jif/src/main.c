@@ -5,9 +5,10 @@
 ** Login   <alies_a@epitech.net>
 **
 ** Started on  Wed Dec  2 20:18:06 2015 Arnaud Alies
-** Last update Fri Apr 15 13:07:24 2016 alies_a
+** Last update Fri Apr 15 16:30:30 2016 alies_a
 */
 
+#include <unistd.h>
 #include "info.h"
 
 t_bunny_response	key_listenner(t_bunny_event_state state,
@@ -27,33 +28,12 @@ static t_bunny_response	loop(void *data_pt)
 {
   t_data		*data;
   t_bunny_position      zero;
-  t_bunny_position	pos;
-  static int		x = 0;
-  t_color		c;
 
   zero.x = 0;
   zero.y = 0;
   data = (t_data*)data_pt;
-  c.full = WHITE;
-  x += 1;
-  pos.x = x;
-  pos.y = x;
-  if (FLAG)
-    {
-      tekpixel(data->pix, &pos, &c);
-      jif_add(data->jif, data->pix);
-      if (x > 200)
-	{
-	  jif_close(data->jif);
-	  return (EXIT_ON_SUCCESS);
-	}
-    }
-  else
-    {
-      //bunny_delete_clipable(&(data->pix->clipable));
-      if (jif_next_fill(data->jif, data->pix))
-	return (EXIT_ON_SUCCESS);
-    }
+  if (jif_next_fill(data->jif, data->pix))
+    return (EXIT_ON_SUCCESS);
   bunny_blit(&((data->win)->buffer), &((data->pix)->clipable), &zero);
   bunny_display(data->win);
   return (GO_ON);
@@ -66,19 +46,18 @@ int		main(int ac, char **av)
   (void)ac;
   (void)av;
   data.keys = NULL;
-  if (FLAG)
+  if (ac <= 1)
     {
-      if ((data.jif = jif_new("test.jif", WIDTH, HEIGHT, 100)) == NULL)
-	return (1);
+      write(1, "PD\n", 3);
+      return (1);
     }
-  else
-    {
-      if ((data.jif = jif_open("test.jif")) == NULL)
-	return (1);
-    }
-  if ((data.pix = bunny_new_pixelarray(WIDTH, HEIGHT)) == NULL)
+  if ((data.jif = jif_open(av[1])) == NULL)
     return (1);
-  if ((data.win = bunny_start(WIDTH, HEIGHT, false, "ray")) == NULL)
+  if ((data.pix = bunny_new_pixelarray(data.jif->head.width,
+				       data.jif->head.height)) == NULL)
+    return (1);
+  if ((data.win = bunny_start(data.jif->head.width,
+			      data.jif->head.height, false, "anal")) == NULL)
     return (1);
   bunny_set_loop_main_function(loop);
   bunny_set_key_response(&key_listenner);

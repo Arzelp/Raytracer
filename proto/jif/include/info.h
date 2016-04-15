@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Wed Apr 13 12:34:17 2016 alies_a
-** Last update Fri Apr 15 16:07:10 2016 alies_a
+** Last update Fri Apr 15 16:28:48 2016 alies_a
 */
 
 #ifndef INFO_H_
@@ -14,8 +14,6 @@
 #include <lapin.h>
 #include "jif.h"
 
-#define WIDTH (1000)
-#define HEIGHT (1000)
 #define FPS (30)
 
 #define FLAG (0)
