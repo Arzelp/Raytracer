@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Feb 20 15:23:59 2016 Arthur Josso
-** Last update Thu Apr 14 14:35:25 2016 Arthur Josso
+** Last update Fri Apr 15 12:58:34 2016 Arthur Josso
 */
 
 #ifndef CORE_H_
@@ -119,7 +119,7 @@ typedef struct s_obj
 typedef struct s_data
 {
   t_bunny_window        *win;
-  t_bunny_pixelarray    *pix;
+  t_bunny_pixelarray	*pix;
   t_bunny_pixelarray    *big;
   t_bunny_pixelarray    *small;
   t_obj                 obj;

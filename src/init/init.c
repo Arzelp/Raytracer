@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:38:07 2016 Arthur Josso
-** Last update Thu Apr 14 15:39:13 2016 Arthur Josso
+** Last update Fri Apr 15 12:57:47 2016 Arthur Josso
 */
 
 #include "rt.h"
@@ -38,6 +38,7 @@ static int	win_init(t_data *data)
   put_in_black(data->big);
   if ((data->small = bunny_new_pixelarray(W_X / 10, W_Y / 10)) == NULL)
     return (ERROR);
+  put_in_black(data->small);
   return (SUCCESS);
 }
 
