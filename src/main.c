@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:33:22 2016 Arthur Josso
-** Last update Fri Apr 15 13:43:59 2016 alies_a
+** Last update Fri Apr 15 15:34:31 2016 alies_a
 */
 
 #include "rt.h"
@@ -67,11 +67,10 @@ static int	setup(int ac, char **av, t_data *data)
 	return (ERROR);
       if (ac == 3)
 	{
-	  
-	}
-      else
-	{
-	  
+	  if ((data->path = jif_path_open(av[2], J_READ)) == NULL)
+	    return (ERROR);
+	  if ((data->jif = jif_new("gen.jif", W_X, W_Y, 10)) == NULL)
+	    return (ERROR);
 	}
     }
   else
@@ -86,8 +85,15 @@ int		main(int ac, char **av)
 {
   t_data	data;
 
+  data.path = NULL;
+  data.jif = NULL;
   if (setup(ac, av, &data) == ERROR)
     return (ERROR);
+  if (data.path == NULL)
+    {
+      if ((data.path = jif_path_open("camera.path", J_WRITE)) == NULL)
+	return (ERROR);
+    }
   rot = 0;
   bunny_set_key_response(&press_key);
   bunny_set_loop_main_function(mainloop);
