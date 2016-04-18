@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Feb 20 15:26:31 2016 Arthur Josso
-** Last update Tue Apr 12 17:24:33 2016 Arthur Josso
+** Last update Sat Apr 16 15:09:18 2016 Arthur Josso
 */
 
 #ifndef INIT_H_
@@ -32,5 +32,7 @@ int     add_sphere(t_obj *obj, t_bunny_ini_scope *scope);
 int     add_cylinder(t_obj *obj, t_bunny_ini_scope *scope);
 int     add_cone(t_obj *obj, t_bunny_ini_scope *scope);
 int     add_torus(t_obj *obj, t_bunny_ini_scope *scope);
+int     add_plan(t_obj *obj, t_bunny_ini_scope *scope);
+int     add_mobius(t_obj *obj, t_bunny_ini_scope *scope);
 
 #endif

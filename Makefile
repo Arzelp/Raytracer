@@ -5,10 +5,10 @@
 ## Login   <arthur.josso@epitech.eu>
 ## 
 ## Started on  Fri Jan 29 18:32:59 2016 Arthur Josso
-## Last update Fri Apr 15 15:59:58 2016 alies_a
+## Last update Mon Apr 18 13:39:45 2016 Arthur Josso
 ##
 
-NAME    =	raytracer1
+NAME    =	raytracer2
 
 CC	= 	gcc -g
 
@@ -62,12 +62,16 @@ SRC	= 	$(SRCS)main.c \
 		$(INIT)add_sphere.c \
 		$(INIT)add_cone.c \
 		$(INIT)add_torus.c \
+		$(INIT)add_plan.c \
+		$(INIT)add_mobius.c \
 		$(MATH)find_k.c \
 		$(MATH)math.c \
 		$(MATH)sphere.c \
 		$(MATH)cylinder.c \
 		$(MATH)cone.c \
 		$(MATH)torus.c \
+		$(MATH)plan.c \
+		$(MATH)mobius.c \
 		$(MATH)screen.c \
 		$(MATH)rotation.c \
 		$(SOLVER)op.c \

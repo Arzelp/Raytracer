@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Thu Feb 11 16:26:07 2016 Arthur Josso
-** Last update Wed Mar 16 11:48:00 2016 Arthur Josso
+** Last update Sat Apr 16 16:32:48 2016 Arthur Josso
 */
 
 #include <math.h>
@@ -15,13 +15,11 @@ static void	get_reflect_hit(t_data *data, t_hit *prev_hit, t_hit *hit)
 {
   t_ray		ray;
   t_vec		v;
-  t_vec		n;
 
   ray.alpha = prev_hit->pt;
   v = get_uni_vec(&prev_hit->pt, &data->obj.cam.pos);
-  n = get_normal_vec(prev_hit);
-  set_uni_vec(&n);
-  ray.beta = get_reflec_vec(&n, &v);
+  set_uni_vec(&prev_hit->n);
+  ray.beta = get_reflec_vec(&prev_hit->n, &v);
   set_uni_vec(&ray.beta);
   ray.alpha.x += PREC * ray.beta.x;
   ray.alpha.y += PREC * ray.beta.y;

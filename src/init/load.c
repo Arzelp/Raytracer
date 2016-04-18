@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Feb 12 16:12:39 2016 Arthur Josso
-** Last update Tue Apr 12 18:18:46 2016 Arthur Josso
+** Last update Sat Apr 16 15:12:28 2016 Arthur Josso
 */
 
 #include "init.h"
@@ -19,6 +19,8 @@ static t_parsing	func[] =
     {&add_cylinder, "cylinder"},
     {&add_cone, "cone"},
     {&add_torus, "torus"},
+    {&add_plan, "plan"},
+    {&add_mobius, "mobius"},
     {NULL, NULL}
   };
 
@@ -63,6 +65,8 @@ static void	init_nb_obj(t_obj *obj)
   obj->nb.cylinder = 0;
   obj->nb.cone = 0;
   obj->nb.torus = 0;
+  obj->nb.plan = 0;
+  obj->nb.mobius = 0;
 }
 
 int		load_scene(t_obj *obj, const char *file)

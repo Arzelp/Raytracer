@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sun Jan 31 20:07:50 2016 Arthur Josso
-** Last update Fri Apr 15 13:45:01 2016 Arthur Josso
+** Last update Sat Apr 16 16:29:14 2016 Arthur Josso
 */
 
 #include <math.h>
@@ -75,6 +75,8 @@ t_vec   get_normal_vec(t_hit *hit)
     n = get_cylinder(hit);
   else if (hit->obj_type == CONE)
     n = get_cone(hit);
+  else if (hit->obj_type == PLAN)
+    n = hit->meta.rot;
   if (hit->obj_type != NONE && hit->meta.perlin.ratio
       && hit->meta.perlin.type == 2)
     n = bump_vec(hit, n);

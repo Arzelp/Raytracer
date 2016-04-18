@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:34:35 2016 Arthur Josso
-** Last update Fri Apr 15 16:44:15 2016 alies_a
+** Last update Mon Apr 18 16:05:04 2016 Arthur Josso
 */
 
 #ifndef RT_H_
@@ -49,12 +49,15 @@ typedef enum	e_obj_type
     SPHERE	= 2,
     CYLINDER	= 3,
     CONE	= 4,
-    TORUS	= 5
+    TORUS	= 5,
+    PLAN	= 6,
+    MOBIUS	= 7
   }		t_obj_type;
 
 typedef struct s_hit
 {
   t_vec		pt;
+  t_vec		n;
   t_vec		rot_pt;
   char		obj_type;
   void		*obj;
@@ -131,6 +134,7 @@ t_vec   get_trans_vec(t_vec vec, t_vec *angle);
 
 t_vec   get_normal_vec(t_hit *hit);
 t_vec	get_torus_n(t_hit *hit);
+t_vec	get_mobius_n(t_vec *hit, t_vec *pt_cen, t_vec *pt_cir);
 
 /*
 ** Math - Vector
@@ -141,8 +145,10 @@ float   get_norm(float k, t_vec *vec);
 t_vec   get_vec(t_vec *pt1, t_vec *pt2);
 t_vec   get_uni_vec(t_vec *pt1, t_vec *pt2);
 float   get_dot(t_vec *v1, t_vec *v2);
+t_vec	vec_product(t_vec *u, t_vec *v);
 t_vec	get_reflec_vec(t_vec *n, t_vec *l);
 void    inv_vec(t_vec *v);
+void	mult_vec(float x, t_vec *v);
 
 /*
 ** Bumping
@@ -162,6 +168,8 @@ void    find_k_sphere(t_ray *ray, t_obj *obj, t_hit *hit);
 void    find_k_cylinder(t_ray *ray, t_obj *obj, t_hit *hit);
 void    find_k_cone(t_ray *ray, t_obj *obj, t_hit *hit);
 void    find_k_torus(t_ray *ray, t_obj *obj, t_hit *hit);
+void	find_k_plan(t_ray *ray, t_obj *obj, t_hit *hit);
+void    find_k_mobius(t_ray *ray, t_obj *obj, t_hit *hit);
 
 /*
 ** Perlin

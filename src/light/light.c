@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sun Jan 31 19:55:37 2016 Arthur Josso
-** Last update Sun Mar 20 14:24:54 2016 Arthur Josso
+** Last update Sat Apr 16 16:30:34 2016 Arthur Josso
 */
 
 #include <math.h>
@@ -22,15 +22,13 @@ static t_ray	get_light_ray(t_vec *light_pos, t_vec *hit_pos)
 
 static float	color_after_light(t_data *data, t_hit *hit, int light)
 {
-  t_vec		n;
   t_ray		l;
   float		coef;
   t_hit		light_hit;
 
-  n = get_normal_vec(hit);
   l = get_light_ray(&data->obj.light[light].pos, &hit->pt);
   find_hit(data, &l, &light_hit);
-  coef = get_dot(&n, &l.beta) * data->obj.light[light].power
+  coef = get_dot(&hit->n, &l.beta) * data->obj.light[light].power
     * hit->meta.reflec;
   if (coef >= 0 || hit->obj != light_hit.obj)
     return (0);

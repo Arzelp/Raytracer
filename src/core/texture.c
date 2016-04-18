@@ -5,14 +5,14 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Tue Feb 16 18:33:58 2016 Arthur Josso
-** Last update Thu Apr 14 14:47:54 2016 Arthur Josso
+** Last update Sat Apr 16 16:00:02 2016 Arthur Josso
 */
 
 #include <math.h>
 #include "rt.h"
 #include "my.h"
 
-static t_vec    cross_product(t_vec *u, t_vec *v)
+t_vec		vec_product(t_vec *u, t_vec *v)
 {
   t_vec		product;
 
@@ -53,7 +53,7 @@ static void	get_ratio(t_vec *hit,
   phi = acos(sec(-get_dot(&n, &p)));
   *y = 1 - (phi / M_PI);
   theta = (acos(sec(get_dot(&p, &e) / sin(phi)))) / (2 * M_PI);
-  cross_prod = cross_product(&n, &e);
+  cross_prod = vec_product(&n, &e);
   *x = get_dot(&cross_prod, &p) > 0 ? theta : 1 - theta;
 }
 

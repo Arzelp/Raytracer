@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Feb 20 15:23:59 2016 Arthur Josso
-** Last update Fri Apr 15 15:07:34 2016 alies_a
+** Last update Sat Apr 16 16:35:27 2016 Arthur Josso
 */
 
 #ifndef CORE_H_
@@ -17,107 +17,122 @@
 #define MAP(x, ba, ea, bb, eb) ((((ba - x) / (ba - ea)) * (eb - bb)) + bb)
 #define ABS(x) ((x) < 0 ? -(x) : (x))
 
-typedef struct s_vec
+typedef struct	s_vec
 {
-  float x;
-  float y;
-  float z;
+  float		x;
+  float		y;
+  float		z;
 } t_vec;
 
-typedef struct s_ray
+typedef struct	s_ray
 {
-  t_vec alpha;
-  t_vec beta;
+  t_vec		alpha;
+  t_vec		beta;
 } t_ray;
 
 /*
 ** t_data
 */
 
-typedef struct s_cam
-{
-  t_vec pos;
-  t_vec rot;
-} __attribute__((__packed__)) t_cam;
-
-typedef struct s_refrac
-{
-  float ratio;
-  float indice;
-} t_refrac;
-
-typedef struct s_perlin
-{
-  float ratio;
-  float	persis;
-  int	*tab;
-  char	type;
-} t_perlin;
-
-typedef struct s_meta
+typedef struct	s_cam
 {
   t_vec		pos;
   t_vec		rot;
-  t_color       color;
-  float         reflec;
-  t_refrac      refrac;
-  t_perlin      perlin;
-  float         mirroring;
-  t_bunny_pixelarray *tex;
+} __attribute__((__packed__)) t_cam;
+
+typedef struct	s_refrac
+{
+  float		ratio;
+  float		indice;
+} t_refrac;
+
+typedef struct	s_perlin
+{
+  float		ratio;
+  float		persis;
+  int		*tab;
+  char		type;
+} t_perlin;
+
+typedef struct		s_meta
+{
+  t_vec			pos;
+  t_vec			rot;
+  t_color		color;
+  float			reflec;
+  t_refrac		refrac;
+  t_perlin		perlin;
+  float			mirroring;
+  t_bunny_pixelarray	*tex;
 } t_meta;
 
-typedef struct s_sphere
+typedef struct	s_plan
+{
+  t_meta	meta;
+} t_plan;
+
+typedef struct	s_sphere
 {
   float         radius;
   t_meta	meta;
 } t_sphere;
 
-typedef struct s_cylinder
+typedef struct	s_cylinder
 {
   float         radius;
   t_meta	meta;
 } t_cylinder;
 
-typedef struct s_cone
+typedef struct	s_cone
 {
   float         angle;
   t_meta	meta;
 } t_cone;
 
-typedef struct s_torus
+typedef struct	s_torus
 {
   float		radius;
   float		width;
   t_meta        meta;
 } t_torus;
 
-typedef struct s_light
+typedef struct	s_mobius
 {
-  t_vec pos;
-  float power;
+  float		radius;
+  t_meta	meta;
+} t_mobius;
+
+typedef struct	s_light
+{
+  t_vec		pos;
+  float		power;
 } t_light;
 
-typedef struct s_nb_item
+typedef struct	s_nb_item
 {
-  int   light;
-  int   sphere;
-  int   cylinder;
-  int   cone;
-  int	torus;
+  int		light;
+  int		sphere;
+  int		cylinder;
+  int		cone;
+  int		torus;
+  int		mobius;
+  int		plan;
 } t_nb_item;
 
-typedef struct s_obj
+typedef struct	s_obj
 {
   t_nb_item     nb;
+  t_plan	*plan;
   t_sphere      *sphere;
   t_cylinder    *cylinder;
   t_cone        *cone;
   t_torus	*torus;
+  t_mobius	*mobius;
   t_light       *light;
   t_cam         cam;
 } t_obj;
 
-typedef struct s_data
+typedef struct		s_data
 {
   t_bunny_window        *win;
   t_bunny_pixelarray	*pix;

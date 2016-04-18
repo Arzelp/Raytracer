@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Jan 30 19:51:49 2016 Arthur Josso
-** Last update Fri Apr 15 13:43:39 2016 Arthur Josso
+** Last update Sat Apr 16 17:33:27 2016 Arthur Josso
 */
 
 #include <stdlib.h>
@@ -48,6 +48,8 @@ void    find_hit(t_data *data, t_ray *ray, t_hit *hit)
   find_k_cylinder(ray, &data->obj, hit);
   find_k_cone(ray, &data->obj, hit);
   find_k_torus(ray, &data->obj, hit);
+  find_k_plan(ray, &data->obj, hit);
+  find_k_mobius(ray, &data->obj, hit);
   find_k_ground(ray, hit);
   hit->pt = get_pt_with_k(hit->k, ray);
   if (hit->obj_type != NONE)
@@ -55,4 +57,6 @@ void    find_hit(t_data *data, t_ray *ray, t_hit *hit)
   if (hit->obj_type != NONE && hit->meta.perlin.ratio
       && hit->meta.perlin.type != 2)
     hit->meta.color = get_perlin_at(&hit->pt, &hit->meta);
+  if (hit->obj_type != MOBIUS)
+    hit->n = get_normal_vec(hit);
 }

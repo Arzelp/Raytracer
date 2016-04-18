@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Thu Feb 18 12:57:22 2016 Arthur Josso
-** Last update Wed Mar 16 11:44:47 2016 Arthur Josso
+** Last update Sat Apr 16 16:32:05 2016 Arthur Josso
 */
 
 #include <math.h>
@@ -36,15 +36,13 @@ static int	get_refract_hit(t_data *data,
 {
   t_ray		ray;
   t_vec		v;
-  t_vec		n;
 
   ray.alpha = prev_hit->pt;
   v = get_uni_vec(&prev_hit->pt, &data->obj.cam.pos);
-  n = get_normal_vec(prev_hit);
   if (indice > 1)
-    inv_vec(&n);
-  set_uni_vec(&n);
-  ray.beta = get_refract_vec(&v, &n, indice);
+    inv_vec(&prev_hit->n);
+  set_uni_vec(&prev_hit->n);
+  ray.beta = get_refract_vec(&v, &prev_hit->n, indice);
   if (ray.beta.x == 0 && ray.beta.y == 0 && ray.beta.z == 0)
     return (1);
   set_uni_vec(&ray.beta);
