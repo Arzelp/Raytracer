@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Wed Apr 20 14:07:00 2016 alies_a
-** Last update Wed Apr 20 18:02:20 2016 alies_a
+** Last update Wed Apr 20 18:03:49 2016 alies_a
 */
 
 #include "core.h"
@@ -26,6 +26,7 @@ t_key_callback callbacks[] = {
   {BKS_I, &key_reflec, 1},
   {BKS_O, &key_refrac, 1},
   {BKS_P, &key_aa, 1},
+  {BKS_SPACE, &key_preview, 1},
   {BKS_ESCAPE, &key_esc, 1},
   {BKS_UNKNOWN, NULL, 0}
 };
