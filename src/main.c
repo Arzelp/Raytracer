@@ -5,33 +5,11 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:33:22 2016 Arthur Josso
-** Last update Wed Apr 20 17:53:02 2016 alies_a
+** Last update Wed Apr 20 18:32:34 2016 alies_a
 */
 
 #include "rt.h"
 #include "keys.h"
-
-/*
-t_bunny_response        press_key(t_bunny_event_state state,
-				  t_bunny_keysym keysym,
-				  void *pt_data)
-{
-  t_data	*data;
-
-  data = pt_data;
-  if (keysym == BKS_SPACE && state == GO_DOWN)
-    data->gen_type ^= IS_PREVIEW;
-  if (keysym == BKS_U && state == GO_DOWN)
-    data->gen_type ^= IS_PHONG;
-  if (keysym == BKS_I && state == GO_DOWN)
-    data->gen_type ^= IS_REFLEC;
-  if (keysym == BKS_O && state == GO_DOWN)
-    data->gen_type ^= IS_REFRAC;
-  if (keysym == BKS_P && state == GO_DOWN)
-    data->gen_type ^= IS_AA;
-  return (GO_ON);
-}
-*/
 
 t_bunny_response        mainloop(void *pt_data)
 {
@@ -42,18 +20,9 @@ t_bunny_response        mainloop(void *pt_data)
   origin.y = 0;
   data = pt_data;
   rot += 0.05;
-  if (data->gen_type & IS_PREVIEW)
-    {
-      data->pix = data->small;
-      //interact_cam(&data->obj.cam);
-      gen_scene(data);
-    }
-  else
-    {
-      data->pix = data->big;
-      gen_scene(data);
-      data->gen_type ^= IS_PREVIEW;
-    }
+  data->pix = (data->gen_type & IS_PREVIEW ? data->small : data->big);
+  data->gen_type |= IS_PREVIEW;
+  gen_scene(data);
   //
   if (data->gen_type & IS_RECORD &&
       jif_path_write(data->path, &(data->obj.cam)))
