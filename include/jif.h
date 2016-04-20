@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Wed Apr 13 17:17:18 2016 alies_a
-** Last update Fri Apr 15 16:00:49 2016 alies_a
+** Last update Wed Apr 20 13:46:48 2016 alies_a
 */
 
 #ifndef JIF_H_

@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:34:35 2016 Arthur Josso
-** Last update Wed Apr 20 12:10:32 2016 alies_a
+** Last update Wed Apr 20 13:48:09 2016 alies_a
 */
 
 #ifndef RT_H_
@@ -34,7 +34,8 @@ typedef enum    e_is_gen
     IS_PHONG	= 1 << 1,
     IS_REFLEC	= 1 << 2,
     IS_REFRAC	= 1 << 3,
-    IS_AA	= 1 << 4
+    IS_AA	= 1 << 4,
+    IS_RECORD	= 1 << 5
   }             t_is_gen;
 
 /*

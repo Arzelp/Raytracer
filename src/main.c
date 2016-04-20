@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:33:22 2016 Arthur Josso
-** Last update Fri Apr 15 16:03:10 2016 alies_a
+** Last update Wed Apr 20 13:52:24 2016 alies_a
 */
 
 #include "rt.h"
@@ -79,7 +79,7 @@ static int	setup(int ac, char **av, t_data *data)
     }
   else
     {
-      if (init(data, "demo/demo1.ini") == ERROR)
+      if (init(data, "./demo/demo1.ini") == ERROR)
 	return (ERROR);
     }
   return (SUCCESS);
