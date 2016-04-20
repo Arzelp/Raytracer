@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Feb 20 15:23:59 2016 Arthur Josso
-** Last update Sat Apr 16 16:35:27 2016 Arthur Josso
+** Last update Wed Apr 20 16:26:52 2016 alies_a
 */
 
 #ifndef CORE_H_
@@ -142,6 +142,7 @@ typedef struct		s_data
   unsigned char         gen_type;
   t_jif_path		*path;
   t_jif			*jif;
+  const bool		*keys;
 } t_data;
 
 typedef enum    e_exit

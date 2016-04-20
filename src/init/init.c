@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:38:07 2016 Arthur Josso
-** Last update Fri Apr 15 12:57:47 2016 Arthur Josso
+** Last update Wed Apr 20 16:27:25 2016 alies_a
 */
 
 #include "rt.h"
@@ -44,6 +44,7 @@ static int	win_init(t_data *data)
 
 int	init(t_data *data, const char *file)
 {
+  data->keys = NULL;
   data->gen_type = IS_PREVIEW;
   if (win_init(data) == ERROR)
     return (ERROR);

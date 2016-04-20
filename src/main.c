@@ -5,11 +5,12 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:33:22 2016 Arthur Josso
-** Last update Wed Apr 20 13:52:24 2016 alies_a
+** Last update Wed Apr 20 16:40:08 2016 alies_a
 */
 
 #include "rt.h"
-
+#include "keys.h"
+/*
 t_bunny_response        press_key(t_bunny_event_state state,
 				  t_bunny_keysym keysym,
 				  void *pt_data)
@@ -31,6 +32,7 @@ t_bunny_response        press_key(t_bunny_event_state state,
     data->gen_type ^= IS_AA;
   return (GO_ON);
 }
+*/
 
 t_bunny_response        mainloop(void *pt_data)
 {
@@ -44,7 +46,7 @@ t_bunny_response        mainloop(void *pt_data)
   if (data->gen_type & IS_PREVIEW)
     {
       data->pix = data->small;
-      interact_cam(&data->obj.cam);
+      //interact_cam(&data->obj.cam);
       gen_scene(data);
     }
   else
@@ -54,9 +56,11 @@ t_bunny_response        mainloop(void *pt_data)
       data->gen_type ^= IS_PREVIEW;
     }
   //
-  if (jif_path_write(data->path, &(data->obj.cam)))
+  if (data->gen_type & IS_RECORD &&
+      jif_path_write(data->path, &(data->obj.cam)))
     return (EXIT_ON_ERROR);
   //
+  manage_keys(data);
   bunny_blit(&data->win->buffer, &data->big->clipable, &origin);
   bunny_blit(&data->win->buffer, &data->small->clipable, &origin);
   bunny_display(data->win);
@@ -101,7 +105,7 @@ int		main(int ac, char **av)
     }
   if (data.jif != NULL)
     jif_gen(&data);
-  bunny_set_key_response(&press_key);
+  bunny_set_key_response(&update_keys);
   bunny_set_loop_main_function(mainloop);
   bunny_loop(data.win, FPS, &data);
   exit_prog(&data);
