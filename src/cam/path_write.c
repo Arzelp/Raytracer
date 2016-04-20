@@ -4,17 +4,18 @@
 ** Made by alies_a
 ** Login   <alies_a@epitech.net>
 ** 
-** Started on  Fri Apr 15 14:57:22 2016 alies_a
-** Last update Wed Apr 20 13:46:26 2016 alies_a
+** Started on  Wed Apr 20 19:20:21 2016 alies_a
+** Last update Wed Apr 20 19:40:10 2016 alies_a
 */
 
 #include <unistd.h>
 #include "core.h"
 #include "jif.h"
+#include "cam.h"
 
-int	jif_path_write(t_jif_path *path, const void *cam)
+int     cam_path_write(t_cam_path *path, const t_cam *cam)
 {
-  int	w;
+  int   w;
 
   if (path->mode != J_WRITE)
     return (1);

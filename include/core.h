@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Feb 20 15:23:59 2016 Arthur Josso
-** Last update Wed Apr 20 16:26:52 2016 alies_a
+** Last update Wed Apr 20 19:41:09 2016 alies_a
 */
 
 #ifndef CORE_H_
@@ -39,6 +39,12 @@ typedef struct	s_cam
   t_vec		pos;
   t_vec		rot;
 } __attribute__((__packed__)) t_cam;
+
+typedef struct s_cam_path
+{
+  t_jif_mode mode;
+  int fd;
+} t_cam_path;
 
 typedef struct	s_refrac
 {
@@ -140,7 +146,7 @@ typedef struct		s_data
   t_bunny_pixelarray    *small;
   t_obj                 obj;
   unsigned char         gen_type;
-  t_jif_path		*path;
+  t_cam_path		*path;
   t_jif			*jif;
   const bool		*keys;
 } t_data;

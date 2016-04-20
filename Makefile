@@ -5,7 +5,7 @@
 ## Login   <arthur.josso@epitech.eu>
 ## 
 ## Started on  Fri Jan 29 18:32:59 2016 Arthur Josso
-## Last update Wed Apr 20 19:02:49 2016 alies_a
+## Last update Wed Apr 20 19:26:30 2016 alies_a
 ##
 
 NAME    =	raytracer2
@@ -46,6 +46,8 @@ PERLIN	=	./src/perlin/
 SOLVER	=	./src/solver/
 
 JIF	=	./src/jif/
+
+CAM	=	./src/cam/
 
 KEYS	=	./src/keys/
 
@@ -112,12 +114,12 @@ SRC	= 	$(SRCS)main.c \
                 $(JIF)add.c \
                 $(JIF)close.c \
                 $(JIF)next.c \
-		$(JIF)path_open.c \
-		$(JIF)path_close.c \
-		$(JIF)path_read.c \
-		$(JIF)path_write.c \
-		$(JIF)gen.c \
-		$(JIF)record.c \
+		$(CAM)path_open.c \
+		$(CAM)path_close.c \
+		$(CAM)path_read.c \
+		$(CAM)path_write.c \
+		$(CAM)gen.c \
+		$(CAM)record.c \
 		$(MY)my_getnbr.c \
 		$(MY)my_getdouble.c \
 		$(MY)my_strcmp.c \
