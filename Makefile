@@ -5,7 +5,7 @@
 ## Login   <arthur.josso@epitech.eu>
 ## 
 ## Started on  Fri Jan 29 18:32:59 2016 Arthur Josso
-## Last update Wed Apr 20 17:59:49 2016 alies_a
+## Last update Wed Apr 20 18:33:40 2016 alies_a
 ##
 
 NAME    =	raytracer2
@@ -28,8 +28,6 @@ SRCS	=	./src/
 INIT	=	./src/init/
 
 MATH	=	./src/math/
-
-PREVIEW	=	./src/preview/
 
 LIGHT	=	./src/light/
 
@@ -101,7 +99,6 @@ SRC	= 	$(SRCS)main.c \
 		$(CORE)get_perlin.c \
 		$(CORE)reflec_vector.c \
 		$(CORE)bump_vec.c \
-		$(PREVIEW)move.c \
 		$(EXIT)exit.c \
 		$(KEYS)callback.c \
 		$(KEYS)move.c \
