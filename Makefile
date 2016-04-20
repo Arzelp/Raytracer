@@ -5,7 +5,7 @@
 ## Login   <arthur.josso@epitech.eu>
 ## 
 ## Started on  Fri Jan 29 18:32:59 2016 Arthur Josso
-## Last update Mon Apr 18 13:39:45 2016 Arthur Josso
+## Last update Wed Apr 20 11:50:29 2016 alies_a
 ##
 
 NAME    =	raytracer2
@@ -114,7 +114,9 @@ SRC	= 	$(SRCS)main.c \
 		$(MY)my_getnbr.c \
 		$(MY)my_getdouble.c \
 		$(MY)my_strcmp.c \
-		$(MY)my_getpixel.c
+		$(MY)my_getpixel.c \
+		$(MY)my_memset.c \
+		$(MY)my_memcmp.c
 
 OBJ	= 	$(SRC:.c=.o)
 
