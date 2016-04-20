@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:33:22 2016 Arthur Josso
-** Last update Wed Apr 20 18:32:34 2016 alies_a
+** Last update Wed Apr 20 19:00:46 2016 alies_a
 */
 
 #include "rt.h"
@@ -18,14 +18,13 @@ t_bunny_response        mainloop(void *pt_data)
 
   origin.x = 0;
   origin.y = 0;
-  data = pt_data;
+  data = (t_data*)pt_data;
   rot += 0.05;
   data->pix = (data->gen_type & IS_PREVIEW ? data->small : data->big);
   data->gen_type |= IS_PREVIEW;
   gen_scene(data);
   //
-  if (data->gen_type & IS_RECORD &&
-      jif_path_write(data->path, &(data->obj.cam)))
+  if (jif_record_frame(data))
     return (EXIT_ON_ERROR);
   //
   manage_keys(data);

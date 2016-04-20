@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Wed Apr 13 17:17:18 2016 alies_a
-** Last update Wed Apr 20 13:46:48 2016 alies_a
+** Last update Wed Apr 20 18:59:54 2016 alies_a
 */
 
 #ifndef JIF_H_
@@ -61,6 +61,7 @@ void jif_close(t_jif *jif);
 
 /*
 ** Camera save
+** CA VA BOUGER
 */
 
 typedef struct s_jif_path
@@ -75,5 +76,12 @@ int jif_path_write(t_jif_path *path, const void *cam);
 int jif_path_read(t_jif_path *path, void *cam);
 
 void jif_path_close(t_jif_path *path);
+
+/*
+** Extra
+*/
+
+typedef struct s_data t_data;
+int jif_record_frame(t_data *data);
 
 #endif

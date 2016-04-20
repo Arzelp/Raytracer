@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Wed Apr 20 14:09:11 2016 alies_a
-** Last update Wed Apr 20 17:56:56 2016 alies_a
+** Last update Wed Apr 20 19:02:27 2016 alies_a
 */
 
 #ifndef KEYS_H_
@@ -64,5 +64,7 @@ int     key_phong(t_data *data);
 int     key_refrac(t_data *data);
 int     key_reflec(t_data *data);
 int     key_aa(t_data *data);
+
+int     key_record(t_data *data);
 
 #endif
