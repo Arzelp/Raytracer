@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Fri Apr 15 15:54:21 2016 alies_a
-** Last update Wed Apr 20 11:57:09 2016 alies_a
+** Last update Wed Apr 20 13:24:02 2016 alies_a
 */
 
 #include "rt.h"
@@ -13,15 +13,25 @@
 #include "jif.h"
 #include "my.h"
 
-int	jif_gen(t_data *data)
+static void	jif_init_gen(t_data *data,
+			     t_cam *old,
+			     t_bunny_position *origin)
 {
-  t_cam	cam;
-  t_cam old;
-
-  my_memset(&old, 0, sizeof(t_cam));
+  origin->x = 0;
+  origin->y = 0;
+  my_memset(old, 0, sizeof(t_cam));
   data->gen_type = 255;
   data->gen_type ^= IS_AA;
   data->gen_type ^= IS_PREVIEW;
+}
+
+int			jif_gen(t_data *data)
+{
+  t_cam			cam;
+  t_cam			old;
+  t_bunny_position	origin;
+
+  jif_init_gen(data, &old, &origin);
   while (jif_path_read(data->path, &cam) == 0)
     {
       data->pix = data->big;
@@ -31,6 +41,8 @@ int	jif_gen(t_data *data)
       old = cam;
       if (jif_add(data->jif, data->pix))
 	return (1);
+      bunny_blit(&data->win->buffer, &data->pix->clipable, &origin);
+      bunny_display(data->win);
     }
   return (0);
 }

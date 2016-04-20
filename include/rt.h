@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:34:35 2016 Arthur Josso
-** Last update Mon Apr 18 16:05:04 2016 Arthur Josso
+** Last update Wed Apr 20 12:10:32 2016 alies_a
 */
 
 #ifndef RT_H_
@@ -13,9 +13,15 @@
 
 #include "core.h"
 
+/*
 #define FULL_SCR (1)
 #define W_X (1920)
 #define W_Y (1080)
+#define FPS (30)
+*/
+#define FULL_SCR (0)
+#define W_X (1600)
+#define W_Y (900)
 #define FPS (30)
 
 #define ANTI_ALIASING (3)
