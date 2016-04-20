@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Wed Apr 20 14:07:00 2016 alies_a
-** Last update Wed Apr 20 16:42:00 2016 alies_a
+** Last update Wed Apr 20 18:02:20 2016 alies_a
 */
 
 #include "core.h"
@@ -17,7 +17,15 @@ t_key_callback callbacks[] = {
   {BKS_S, &key_left, 0},
   {BKS_F, &key_right, 0},
   {BKS_T, &key_up, 0},
-  {BKS_G, &key_down, 1},
+  {BKS_G, &key_down, 0},
+  {BKS_UP, &key_up_rotate, 0},
+  {BKS_DOWN, &key_down_rotate, 0},
+  {BKS_LEFT, &key_left_rotate, 0},
+  {BKS_RIGHT, &key_right_rotate, 0},
+  {BKS_U, &key_phong, 1},
+  {BKS_I, &key_reflec, 1},
+  {BKS_O, &key_refrac, 1},
+  {BKS_P, &key_aa, 1},
   {BKS_ESCAPE, &key_esc, 1},
   {BKS_UNKNOWN, NULL, 0}
 };

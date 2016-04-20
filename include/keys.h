@@ -5,13 +5,21 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Wed Apr 20 14:09:11 2016 alies_a
-** Last update Wed Apr 20 16:42:24 2016 alies_a
+** Last update Wed Apr 20 17:56:56 2016 alies_a
 */
 
 #ifndef KEYS_H_
 #define KEYS_H_
 
 #include <lapin.h>
+
+/*
+** Every keys have its callback
+** Defined by:
+** type (key name)
+** callback (function called)
+** instant, 0/1 (0 if the key is meant to be long pressed)
+*/
 
 typedef struct s_key_callback
 {
@@ -29,12 +37,32 @@ void	manage_keys(t_data *data);
 ** Callbacks
 */
 
+int     key_esc(t_data *data);
+
+/*
+** Camera
+*/
+
 int     key_up(t_data *data);
 int     key_down(t_data *data);
 int     key_forward(t_data *data);
 int     key_backward(t_data *data);
 int     key_left(t_data *data);
 int     key_right(t_data *data);
-int     key_esc(t_data *data);
+
+int     key_left_rotate(t_data *data);
+int     key_right_rotate(t_data *data);
+int     key_up_rotate(t_data *data);
+int     key_down_rotate(t_data *data);
+
+/*
+** Toggle effects
+*/
+
+int     key_preview(t_data *data);
+int     key_phong(t_data *data);
+int     key_refrac(t_data *data);
+int     key_reflec(t_data *data);
+int     key_aa(t_data *data);
 
 #endif

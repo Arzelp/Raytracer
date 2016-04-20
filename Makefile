@@ -5,7 +5,7 @@
 ## Login   <arthur.josso@epitech.eu>
 ## 
 ## Started on  Fri Jan 29 18:32:59 2016 Arthur Josso
-## Last update Wed Apr 20 16:13:53 2016 alies_a
+## Last update Wed Apr 20 17:59:49 2016 alies_a
 ##
 
 NAME    =	raytracer2
@@ -107,6 +107,8 @@ SRC	= 	$(SRCS)main.c \
 		$(KEYS)move.c \
 		$(KEYS)height.c \
 		$(KEYS)esc.c \
+		$(KEYS)rotate.c \
+		$(KEYS)effect.c \
 		$(JIF)new.c \
                 $(JIF)open.c \
                 $(JIF)add.c \

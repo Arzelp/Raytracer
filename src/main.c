@@ -5,11 +5,12 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:33:22 2016 Arthur Josso
-** Last update Wed Apr 20 16:40:08 2016 alies_a
+** Last update Wed Apr 20 17:53:02 2016 alies_a
 */
 
 #include "rt.h"
 #include "keys.h"
+
 /*
 t_bunny_response        press_key(t_bunny_event_state state,
 				  t_bunny_keysym keysym,
@@ -18,8 +19,6 @@ t_bunny_response        press_key(t_bunny_event_state state,
   t_data	*data;
 
   data = pt_data;
-  if (keysym == BKS_ESCAPE && state == GO_DOWN)
-    return (EXIT_ON_SUCCESS);
   if (keysym == BKS_SPACE && state == GO_DOWN)
     data->gen_type ^= IS_PREVIEW;
   if (keysym == BKS_U && state == GO_DOWN)
