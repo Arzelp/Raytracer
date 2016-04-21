@@ -5,11 +5,12 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:33:22 2016 Arthur Josso
-** Last update Wed Apr 20 19:00:46 2016 alies_a
+** Last update Wed Apr 20 19:30:14 2016 alies_a
 */
 
 #include "rt.h"
 #include "keys.h"
+#include "cam.h"
 
 t_bunny_response        mainloop(void *pt_data)
 {
@@ -24,7 +25,7 @@ t_bunny_response        mainloop(void *pt_data)
   data->gen_type |= IS_PREVIEW;
   gen_scene(data);
   //
-  if (jif_record_frame(data))
+  if (cam_record(data))
     return (EXIT_ON_ERROR);
   //
   manage_keys(data);
@@ -42,7 +43,7 @@ static int	setup(int ac, char **av, t_data *data)
 	return (ERROR);
       if (ac == 3)
 	{
-	  if ((data->path = jif_path_open(av[2], J_READ)) == NULL)
+	  if ((data->path = cam_path_open(av[2], J_READ)) == NULL)
 	    return (ERROR);
 	  if ((data->jif = jif_new("gen.jif", W_X, W_Y, 10)) == NULL)
 	    return (ERROR);
@@ -67,11 +68,11 @@ int		main(int ac, char **av)
     return (ERROR);
   if (data.path == NULL)
     {
-      if ((data.path = jif_path_open("camera.path", J_WRITE)) == NULL)
+      if ((data.path = cam_path_open("camera.path", J_WRITE)) == NULL)
 	return (ERROR);
     }
   if (data.jif != NULL)
-    jif_gen(&data);
+    cam_gen(&data);
   bunny_set_key_response(&update_keys);
   bunny_set_loop_main_function(mainloop);
   bunny_loop(data.win, FPS, &data);

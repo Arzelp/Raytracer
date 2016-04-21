@@ -5,10 +5,11 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Thu Feb 18 17:59:57 2016 Arthur Josso
-** Last update Fri Apr 15 15:33:34 2016 alies_a
+** Last update Wed Apr 20 19:30:48 2016 alies_a
 */
 
 #include "rt.h"
+#include "cam.h"
 
 void	exit_prog(t_data *data)
 {
@@ -23,7 +24,7 @@ void	exit_prog(t_data *data)
 	bunny_delete_clipable(&data->obj.sphere[i].meta.tex->clipable);
       i++;
     }
-  jif_path_close(data->path);
+  cam_path_close(data->path);
   if (data->jif != NULL)
     jif_close(data->jif);
   bunny_stop(data->win);

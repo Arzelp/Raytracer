@@ -4,16 +4,17 @@
 ** Made by alies_a
 ** Login   <alies_a@epitech.net>
 ** 
-** Started on  Fri Apr 15 15:54:21 2016 alies_a
-** Last update Wed Apr 20 13:24:02 2016 alies_a
+** Started on  Wed Apr 20 19:24:51 2016 alies_a
+** Last update Wed Apr 20 19:27:57 2016 alies_a
 */
 
 #include "rt.h"
 #include "core.h"
 #include "jif.h"
 #include "my.h"
+#include "cam.h"
 
-static void	jif_init_gen(t_data *data,
+static void     cam_init_gen(t_data *data,
 			     t_cam *old,
 			     t_bunny_position *origin)
 {
@@ -25,14 +26,14 @@ static void	jif_init_gen(t_data *data,
   data->gen_type ^= IS_PREVIEW;
 }
 
-int			jif_gen(t_data *data)
+int                     cam_gen(t_data *data)
 {
-  t_cam			cam;
-  t_cam			old;
-  t_bunny_position	origin;
+  t_cam                 cam;
+  t_cam                 old;
+  t_bunny_position      origin;
 
-  jif_init_gen(data, &old, &origin);
-  while (jif_path_read(data->path, &cam) == 0)
+  cam_init_gen(data, &old, &origin);
+  while (cam_path_read(data->path, &cam) == 0)
     {
       data->pix = data->big;
       data->obj.cam = cam;

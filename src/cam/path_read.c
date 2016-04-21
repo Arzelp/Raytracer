@@ -4,17 +4,18 @@
 ** Made by alies_a
 ** Login   <alies_a@epitech.net>
 ** 
-** Started on  Fri Apr 15 14:54:44 2016 alies_a
-** Last update Fri Apr 15 15:02:28 2016 alies_a
+** Started on  Wed Apr 20 19:21:55 2016 alies_a
+** Last update Wed Apr 20 19:38:45 2016 alies_a
 */
 
 #include <unistd.h>
 #include "core.h"
 #include "jif.h"
+#include "cam.h"
 
-int	jif_path_read(t_jif_path *path, void *cam)
+int     cam_path_read(t_cam_path *path, t_cam *cam)
 {
-  int	r;
+  int   r;
 
   if (path->mode != J_READ)
     return (1);

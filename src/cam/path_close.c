@@ -4,15 +4,16 @@
 ** Made by alies_a
 ** Login   <alies_a@epitech.net>
 ** 
-** Started on  Fri Apr 15 14:52:58 2016 alies_a
-** Last update Fri Apr 15 14:53:46 2016 alies_a
+** Started on  Wed Apr 20 19:23:14 2016 alies_a
+** Last update Wed Apr 20 19:23:31 2016 alies_a
 */
 
 #include <stdlib.h>
 #include <unistd.h>
 #include "jif.h"
+#include "cam.h"
 
-void	jif_path_close(t_jif_path *path)
+void    cam_path_close(t_cam_path *path)
 {
   close(path->fd);
   free(path);
