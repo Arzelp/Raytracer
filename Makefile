@@ -5,7 +5,7 @@
 ## Login   <arthur.josso@epitech.eu>
 ## 
 ## Started on  Fri Jan 29 18:32:59 2016 Arthur Josso
-## Last update Wed Apr 20 19:26:30 2016 alies_a
+## Last update Thu Apr 21 10:55:27 2016 Arthur Josso
 ##
 
 NAME    =	raytracer2
@@ -34,8 +34,6 @@ LIGHT	=	./src/light/
 DISPLAY	=	./src/display/
 
 CORE	=	./src/core/
-
-TCORE	=	./tcore/
 
 MY	=	./src/my/
 
@@ -92,8 +90,7 @@ SRC	= 	$(SRCS)main.c \
 		$(PERLIN)gen_tab.c \
 		$(PERLIN)perlin.c \
 		$(PERLIN)core_perlin.c \
-		$(TCORE)tekpixel.c \
-		$(TCORE)tekray.c \
+		$(CORE)tekpixel.c \
 		$(CORE)color.c \
 		$(CORE)vector.c \
 		$(CORE)vector2.c \
