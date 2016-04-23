@@ -5,13 +5,13 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Wed Apr 20 14:09:11 2016 alies_a
-** Last update Wed Apr 20 19:02:27 2016 alies_a
+** Last update Thu Apr 21 13:31:34 2016 Arthur Josso
 */
 
 #ifndef KEYS_H_
-#define KEYS_H_
+# define KEYS_H_
 
-#include <lapin.h>
+# include <lapin.h>
 
 /*
 ** Every keys have its callback

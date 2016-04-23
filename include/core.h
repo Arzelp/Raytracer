@@ -5,17 +5,17 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Feb 20 15:23:59 2016 Arthur Josso
-** Last update Wed Apr 20 19:41:09 2016 alies_a
+** Last update Sat Apr 23 15:49:51 2016 Arthur Josso
 */
 
 #ifndef CORE_H_
 # define CORE_H_
 
-#include <lapin.h>
-#include "jif.h"
+# include <lapin.h>
+# include "jif.h"
 
-#define MAP(x, ba, ea, bb, eb) ((((ba - x) / (ba - ea)) * (eb - bb)) + bb)
-#define ABS(x) ((x) < 0 ? -(x) : (x))
+# define MAP(x, ba, ea, bb, eb) ((((ba - x) / (ba - ea)) * (eb - bb)) + bb)
+# define ABS(x) ((x) < 0 ? -(x) : (x))
 
 typedef struct	s_vec
 {
@@ -40,10 +40,10 @@ typedef struct	s_cam
   t_vec		rot;
 } __attribute__((__packed__)) t_cam;
 
-typedef struct s_cam_path
+typedef struct	s_cam_path
 {
-  t_jif_mode mode;
-  int fd;
+  t_jif_mode	mode;
+  int		fd;
 } t_cam_path;
 
 typedef struct	s_refrac
@@ -71,6 +71,28 @@ typedef struct		s_meta
   float			mirroring;
   t_bunny_pixelarray	*tex;
 } t_meta;
+
+typedef struct	s_vertex
+{
+  t_vec         *pos;
+  t_vec         *n;
+  t_vec         *t;
+} t_vertex;
+
+typedef struct	s_tri_mesh
+{
+  t_vertex	vert[3];
+} t_tri_mesh;
+
+typedef struct	s_mesh
+{
+  t_vec		**v;
+  t_vec		**vn;
+  t_vec		**vt;
+  t_tri_mesh	**tri;
+  int		fd;
+  t_meta	meta;
+} t_mesh;
 
 typedef struct	s_plan
 {
@@ -123,6 +145,7 @@ typedef struct	s_nb_item
   int		torus;
   int		mobius;
   int		plan;
+  int		mesh;
 } t_nb_item;
 
 typedef struct	s_obj
@@ -135,6 +158,7 @@ typedef struct	s_obj
   t_torus	*torus;
   t_mobius	*mobius;
   t_light       *light;
+  t_mesh	*mesh;
   t_cam         cam;
 } t_obj;
 

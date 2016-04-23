@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Feb 20 16:27:02 2016 Arthur Josso
-** Last update Thu Apr 14 14:55:01 2016 Arthur Josso
+** Last update Thu Apr 21 13:17:15 2016 Arthur Josso
 */
 
 #include "rt.h"
@@ -62,14 +62,17 @@ static int	get_ini_color(t_bunny_ini_scope *scope, t_color *color)
   const char	*data;
 
   if ((data = bunny_ini_scope_get_field(scope, "color", 0)) == NULL)
-    return (1);
-  color->argb[RED_CMP] = get_double((char*)data);
+    color->argb[RED_CMP] = 255;
+  else
+    color->argb[RED_CMP] = get_double((char*)data);
   if ((data = bunny_ini_scope_get_field(scope, "color", 1)) == NULL)
-    return (1);
-  color->argb[GREEN_CMP] = get_double((char*)data);
+    color->argb[GREEN_CMP] = 255;
+  else
+    color->argb[GREEN_CMP] = get_double((char*)data);
   if ((data = bunny_ini_scope_get_field(scope, "color", 2)) == NULL)
-    return (1);
-  color->argb[BLUE_CMP] = get_double((char*)data);
+    color->argb[BLUE_CMP] = 255;
+  else
+    color->argb[BLUE_CMP] = get_double((char*)data);
   if ((data = bunny_ini_scope_get_field(scope, "color", 3)) == NULL)
     color->argb[ALPHA_CMP] = 0;
   else

@@ -5,13 +5,13 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Feb 20 15:26:31 2016 Arthur Josso
-** Last update Sat Apr 16 15:09:18 2016 Arthur Josso
+** Last update Thu Apr 21 13:30:23 2016 Arthur Josso
 */
 
 #ifndef INIT_H_
 # define INIT_H_
 
-#include "core.h"
+# include "core.h"
 
 typedef struct s_parsing
 {
@@ -34,5 +34,6 @@ int     add_cone(t_obj *obj, t_bunny_ini_scope *scope);
 int     add_torus(t_obj *obj, t_bunny_ini_scope *scope);
 int     add_plan(t_obj *obj, t_bunny_ini_scope *scope);
 int     add_mobius(t_obj *obj, t_bunny_ini_scope *scope);
+int     add_mesh(t_obj *obj, t_bunny_ini_scope *scope);
 
 #endif

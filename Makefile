@@ -5,7 +5,7 @@
 ## Login   <arthur.josso@epitech.eu>
 ## 
 ## Started on  Fri Jan 29 18:32:59 2016 Arthur Josso
-## Last update Thu Apr 21 10:55:27 2016 Arthur Josso
+## Last update Sat Apr 23 16:19:09 2016 Arthur Josso
 ##
 
 NAME    =	raytracer2
@@ -26,6 +26,8 @@ LDFLAGS +=	-I/home/${USER}/.froot/include/ \
 SRCS	=	./src/
 
 INIT	=	./src/init/
+
+IN_MESH	=	./src/init/mesh/
 
 MATH	=	./src/math/
 
@@ -64,6 +66,10 @@ SRC	= 	$(SRCS)main.c \
 		$(INIT)add_torus.c \
 		$(INIT)add_plan.c \
 		$(INIT)add_mobius.c \
+		$(IN_MESH)add_mesh.c \
+		$(IN_MESH)parsing.c \
+		$(IN_MESH)add_basic.c \
+		$(IN_MESH)add_face.c \
 		$(MATH)find_k.c \
 		$(MATH)math.c \
 		$(MATH)sphere.c \
@@ -122,7 +128,12 @@ SRC	= 	$(SRCS)main.c \
 		$(MY)my_strcmp.c \
 		$(MY)my_getpixel.c \
 		$(MY)my_memset.c \
-		$(MY)my_memcmp.c
+		$(MY)my_memcmp.c \
+		$(MY)my_epurstr.c \
+		$(MY)my_getnextline.c \
+		$(MY)my_str_to_tab.c \
+		$(MY)my_is_float.c \
+		$(MY)my_isnbr.c
 
 OBJ	= 	$(SRC:.c=.o)
 

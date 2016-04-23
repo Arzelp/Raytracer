@@ -5,16 +5,16 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Feb 20 15:06:36 2016 Arthur Josso
-** Last update Sat Feb 20 16:45:10 2016 Arthur Josso
+** Last update Thu Apr 21 13:31:50 2016 Arthur Josso
 */
 
 #ifndef PERLIN_H_
 # define PERLIN_H_
 
-#include "core.h"
+# include "core.h"
 
-#define OCTAVES (8)
-#define SIZE (256)
+# define OCTAVES (8)
+# define SIZE (256)
 
 typedef struct s_cube_corner
 {

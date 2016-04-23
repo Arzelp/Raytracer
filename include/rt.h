@@ -5,13 +5,13 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:34:35 2016 Arthur Josso
-** Last update Wed Apr 20 13:48:09 2016 alies_a
+** Last update Thu Apr 21 13:32:28 2016 Arthur Josso
 */
 
 #ifndef RT_H_
 # define RT_H_
 
-#include "core.h"
+# include "core.h"
 
 /*
 #define FULL_SCR (1)
@@ -19,12 +19,12 @@
 #define W_Y (1080)
 #define FPS (30)
 */
-#define FULL_SCR (0)
-#define W_X (1600)
-#define W_Y (900)
-#define FPS (30)
+# define FULL_SCR (0)
+# define W_X (1600)
+# define W_Y (900)
+# define FPS (30)
 
-#define ANTI_ALIASING (3)
+# define ANTI_ALIASING (3)
 
 float	rot;
 
@@ -58,7 +58,8 @@ typedef enum	e_obj_type
     CONE	= 4,
     TORUS	= 5,
     PLAN	= 6,
-    MOBIUS	= 7
+    MOBIUS	= 7,
+    MESH	= 8
   }		t_obj_type;
 
 typedef struct s_hit
@@ -81,8 +82,8 @@ t_color	anti_aliasing(t_data *data, t_vec *pos);
 ** Light
 */
 
-#define AMBIENT (0.1)
-#define PREC (0.01)
+# define AMBIENT (0.1)
+# define PREC (0.01)
 
 typedef struct s_color_sum
 {
@@ -97,7 +98,7 @@ void    light(t_data *data, t_hit *hit);
 ** Phong
 */
 
-#define PHONG_SIZE (32)
+# define PHONG_SIZE (32)
 
 void    phong(t_data *data, t_hit *hit);
 
@@ -111,7 +112,7 @@ void    reflect(t_data *data, t_hit *vision_hit);
 ** Refraction
 */
 
-#define I_AIR (1.00)
+# define I_AIR (1.00)
 
 void    refract(t_data *data, t_hit *vision_hit);
 
@@ -119,9 +120,9 @@ void    refract(t_data *data, t_hit *vision_hit);
 ** Math - General
 */
 
-#define POW(x) ((x) * (x))
+# define POW(x) ((x) * (x))
 
-#define VIEW_RANGE (500)
+# define VIEW_RANGE (500)
 
 void    get_ray(t_data *data, t_cam *cam, t_vec *scr, t_ray *ray);
 t_vec	get_pt_with_k(float k, t_ray *ray);
@@ -161,8 +162,8 @@ void	mult_vec(float x, t_vec *v);
 ** Bumping
 */
 
-#define EPSILON (0.001)
-#define SMOOTH (0.1)
+# define EPSILON (0.001)
+# define SMOOTH (0.1)
 
 t_vec   bump_vec(t_hit *hit, t_vec n);
 
@@ -189,8 +190,8 @@ float	perlin(int *tab, t_vec *pt, float persistance);
 ** Preview
 */
 
-#define MOVE (0.1)
-#define ROT (M_PI / 128)
+# define MOVE (0.1)
+# define ROT (M_PI / 128)
 
 void    interact_cam(t_cam *cam);
 

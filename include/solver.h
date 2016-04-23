@@ -5,14 +5,14 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Wed Apr 13 17:53:18 2016 Arthur Josso
-** Last update Fri Apr 15 20:04:38 2016 Arthur Josso
+** Last update Thu Apr 21 13:32:47 2016 Arthur Josso
 */
 
 #ifndef SOLVER_H
 # define SOLVER_H
 
-#define TOL (0.0000000000001)
-#define IMG_TOL (0.00001)
+# define TOL		(0.0000000000001)
+# define IMG_TOL	(0.00001)
 
 typedef	struct	s_cplx
 {

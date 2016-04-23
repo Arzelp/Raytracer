@@ -5,14 +5,14 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Wed Apr 20 19:14:15 2016 alies_a
-** Last update Wed Apr 20 19:40:59 2016 alies_a
+** Last update Thu Apr 21 13:30:02 2016 Arthur Josso
 */
 
 #ifndef CAM_H_
-#define CAM_H_
+# define CAM_H_
 
-#include "jif.h"
-#include "core.h"
+# include "jif.h"
+# include "core.h"
 
 t_cam_path *cam_path_open(const char *file, t_jif_mode mode);
 
