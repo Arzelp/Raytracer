@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Apr 15 13:44:19 2016 Arthur Josso
-** Last update Mon Apr 18 16:08:08 2016 Arthur Josso
+** Last update Sun Apr 24 18:58:26 2016 Arthur Josso
 */
 
 #include <math.h>
@@ -59,4 +59,19 @@ t_vec		get_mobius_n(t_vec *hit, t_vec *pt_cen, t_vec *pt_cir)
     inv_vec(&n);
   set_uni_vec(&n);
   return (n);
+}
+
+t_vec		get_mesh_n(t_hit *hit, int n_tri, float u, float v)
+{
+  t_mesh	*mesh;
+  t_vec		n[3];
+
+  mesh = hit->obj;
+  n[0] = *mesh->tri[n_tri]->vert[0].n;
+  n[1] = *mesh->tri[n_tri]->vert[1].n;
+  n[2] = *mesh->tri[n_tri]->vert[2].n;
+  hit->n.x = (1 - u - v) * n[0].x + u * n[1].x + v * n[2].x;
+  hit->n.y = (1 - u - v) * n[0].y + u * n[1].y + v * n[2].y;
+  hit->n.z = (1 - u - v) * n[0].z + u * n[1].z + v * n[2].z;
+  return (hit->n);
 }

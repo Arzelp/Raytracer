@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:34:35 2016 Arthur Josso
-** Last update Thu Apr 21 13:32:28 2016 Arthur Josso
+** Last update Sun Apr 24 18:54:38 2016 Arthur Josso
 */
 
 #ifndef RT_H_
@@ -143,6 +143,7 @@ t_vec   get_trans_vec(t_vec vec, t_vec *angle);
 t_vec   get_normal_vec(t_hit *hit);
 t_vec	get_torus_n(t_hit *hit);
 t_vec	get_mobius_n(t_vec *hit, t_vec *pt_cen, t_vec *pt_cir);
+t_vec	get_mesh_n(t_hit *hit, int n_tri, float u, float v);
 
 /*
 ** Math - Vector
@@ -178,6 +179,7 @@ void    find_k_cone(t_ray *ray, t_obj *obj, t_hit *hit);
 void    find_k_torus(t_ray *ray, t_obj *obj, t_hit *hit);
 void	find_k_plan(t_ray *ray, t_obj *obj, t_hit *hit);
 void    find_k_mobius(t_ray *ray, t_obj *obj, t_hit *hit);
+void    find_k_mesh(t_ray *ray, t_obj *obj, t_hit *hit);
 
 /*
 ** Perlin

@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Apr 23 14:52:28 2016 Arthur Josso
-** Last update Sat Apr 23 16:37:56 2016 Arthur Josso
+** Last update Mon Apr 25 13:57:37 2016 Arthur Josso
 */
 
 #include "mesh.h"
@@ -80,9 +80,10 @@ static int	add_meshes(t_mesh *mesh,
     return (1);
   while (i < nb_vert)
     {
-      tri.vert[0] = tri.vert[1];
       tri.vert[1] = tri.vert[2];
       if (get_vertex(mesh, nb, val[i], &tri.vert[2]) == 1)
+	return (1);
+      if (realloc_mesh_tri(&mesh->tri, &tri) == 1)
 	return (1);
       i++;
     }

@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Thu Apr 21 13:35:10 2016 Arthur Josso
-** Last update Sat Apr 23 16:46:19 2016 Arthur Josso
+** Last update Mon Apr 25 14:19:58 2016 Arthur Josso
 */
 
 #include "mesh.h"
@@ -50,24 +50,6 @@ void	free_tab(char **tab)
     bunny_free(tab);
 }
 
-void	print_mesh(t_mesh *mesh)
-{
-  int	i;
-
-  i = -1;
-  while (mesh->v[++i])
-    printf("v\t%.2f\t%.2f\t%.2f\n", mesh->v[i]->x, mesh->v[i]->y, mesh->v[i]->z);
-  printf("\n");
-  i = -1;
-  while(mesh->vn[++i])
-    printf("vn\t%.2f\t%.2f\t%.2f\n", mesh->vn[i]->x, mesh->vn[i]->y, mesh->vn[i]->z);
-  printf("\n");
-  i = -1;
-  while(mesh->vt[++i])
-    printf("vt\t%.2f\t%.2f\t%.2f\n", mesh->vt[i]->x, mesh->vt[i]->y, mesh->vt[i]->z);
-  printf("\n");
-}
-
 int		mesh_pars(t_mesh *mesh)
 {
   t_nb_mesh	nb;
@@ -91,6 +73,5 @@ int		mesh_pars(t_mesh *mesh)
       free_tab(tab);
       bunny_free(line);
     }
-  print_mesh(mesh);
   return (0);
 }

@@ -5,7 +5,7 @@
 ## Login   <arthur.josso@epitech.eu>
 ## 
 ## Started on  Fri Jan 29 18:32:59 2016 Arthur Josso
-## Last update Sat Apr 23 16:19:09 2016 Arthur Josso
+## Last update Sun Apr 24 20:51:59 2016 Arthur Josso
 ##
 
 NAME    =	raytracer2
@@ -78,6 +78,7 @@ SRC	= 	$(SRCS)main.c \
 		$(MATH)torus.c \
 		$(MATH)plan.c \
 		$(MATH)mobius.c \
+		$(MATH)mesh.c \
 		$(MATH)screen.c \
 		$(MATH)rotation.c \
 		$(SOLVER)op.c \
