@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sun Jan 31 20:07:50 2016 Arthur Josso
-** Last update Sat Apr 16 16:29:14 2016 Arthur Josso
+** Last update Wed Apr 27 11:56:18 2016 Arthur Josso
 */
 
 #include <math.h>
@@ -28,16 +28,6 @@ static t_vec    get_sphere(t_hit *hit)
   t_vec         n;
 
   n = get_uni_vec(&hit->meta.pos, &hit->pt);
-  return (n);
-}
-
-static t_vec    get_ground()
-{
-  t_vec         n;
-
-  n.x = 0;
-  n.y = 0;
-  n.z = 2;
   return (n);
 }
 
@@ -65,9 +55,7 @@ t_vec   get_normal_vec(t_hit *hit)
 {
   t_vec n;
 
-  if (hit->obj_type == GROUND)
-    n = get_ground();
-  else if (hit->obj_type == TORUS)
+  if (hit->obj_type == TORUS)
     n = get_torus_n(hit);
   else if (hit->obj_type == SPHERE)
     n = get_sphere(hit);

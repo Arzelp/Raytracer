@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:38:07 2016 Arthur Josso
-** Last update Wed Apr 20 16:27:25 2016 alies_a
+** Last update Wed Apr 27 13:32:27 2016 Arthur Josso
 */
 
 #include "rt.h"
@@ -20,7 +20,7 @@ static void		put_in_black(t_bunny_pixelarray *pix)
   while (pos.x < pix->clipable.clip_width)
     {
       pos.y = 0;
-      while(pos.y < pix->clipable.clip_height)
+      while (pos.y < pix->clipable.clip_height)
 	{
 	  tekpixel(pix, &pos, &color);
 	  pos.y++;

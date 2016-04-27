@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:34:35 2016 Arthur Josso
-** Last update Sun Apr 24 18:54:38 2016 Arthur Josso
+** Last update Wed Apr 27 11:56:38 2016 Arthur Josso
 */
 
 #ifndef RT_H_
@@ -52,14 +52,13 @@ int     init(t_data *data, const char *file);
 typedef enum	e_obj_type
   {
     NONE	= 0,
-    GROUND	= 1,
+    MESH	= 1,
     SPHERE	= 2,
     CYLINDER	= 3,
     CONE	= 4,
     TORUS	= 5,
     PLAN	= 6,
-    MOBIUS	= 7,
-    MESH	= 8
+    MOBIUS	= 7
   }		t_obj_type;
 
 typedef struct s_hit

@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Feb 20 15:23:59 2016 Arthur Josso
-** Last update Sat Apr 23 15:49:51 2016 Arthur Josso
+** Last update Wed Apr 27 13:16:10 2016 Arthur Josso
 */
 
 #ifndef CORE_H_
@@ -96,6 +96,7 @@ typedef struct	s_mesh
 
 typedef struct	s_plan
 {
+  int		ground;
   t_meta	meta;
 } t_plan;
 

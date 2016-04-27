@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:33:22 2016 Arthur Josso
-** Last update Sun Apr 24 20:53:06 2016 Arthur Josso
+** Last update Wed Apr 27 13:21:35 2016 Arthur Josso
 */
 
 #include "rt.h"
@@ -61,7 +61,7 @@ int		main(int ac, char **av)
 {
   t_data	data;
 
-  bunny_set_maximum_ram(1e9);
+  bunny_set_maximum_ram(1e8);
   data.path = NULL;
   data.jif = NULL;
   rot = 0;

@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Apr 15 17:51:42 2016 Arthur Josso
-** Last update Mon Apr 18 16:07:31 2016 Arthur Josso
+** Last update Wed Apr 27 13:30:49 2016 Arthur Josso
 */
 
 #include <math.h>
@@ -29,9 +29,10 @@ void	find_k_plan(t_ray *ray, t_obj *obj, t_hit *hit)
 {
   float	k;
   int	i;
+  char	mod;
 
-  i = 0;
-  while (i < obj->nb.plan)
+  i = -1;
+  while (++i < obj->nb.plan)
     {
       k = get_hit(ray, &obj->plan[i]);
       if (k < hit->k && k >= 0)
@@ -40,7 +41,15 @@ void	find_k_plan(t_ray *ray, t_obj *obj, t_hit *hit)
 	  hit->obj = (void*)&obj->plan[i];
 	  hit->obj_type = PLAN;
 	  hit->meta = obj->plan[i].meta;
+	  if (obj->plan[i].ground)
+	    {
+	      hit->pt = get_pt_with_k(hit->k, ray);
+	      mod = hit->pt.x * hit->pt.y > 0 ? 1 : 0;
+	      hit->meta.color.full = ABS((int)hit->pt.x + (int)hit->pt.y)
+		% 2 == mod ? WHITE : BLACK;
+	      hit->meta.reflec = 1;
+	      hit->meta.mirroring = 0.4;
+	    }
 	}
-      i++;
     }
 }

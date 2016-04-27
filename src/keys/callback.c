@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Wed Apr 20 14:07:00 2016 alies_a
-** Last update Wed Apr 20 19:03:14 2016 alies_a
+** Last update Wed Apr 27 13:33:25 2016 Arthur Josso
 */
 
 #include "core.h"
@@ -36,7 +36,6 @@ t_bunny_response	update_keys(t_bunny_event_state state,
 				    t_bunny_keysym keysym,
 				    void *pt_data)
 {
-  
   int			x;
 
   (void)keysym;

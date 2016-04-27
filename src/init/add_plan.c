@@ -5,10 +5,11 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Apr 15 17:42:24 2016 Arthur Josso
-** Last update Fri Apr 15 18:13:59 2016 Arthur Josso
+** Last update Wed Apr 27 13:19:12 2016 Arthur Josso
 */
 
 #include "init.h"
+#include "my.h"
 
 static int	add(t_plan **item, int *nb_item, t_plan new_item)
 {
@@ -31,10 +32,22 @@ static int	add(t_plan **item, int *nb_item, t_plan new_item)
   return (0);
 }
 
+static void	is_ground(t_bunny_ini_scope *scope, t_plan *plan)
+{
+  char const	*data;
+
+  if ((data = bunny_ini_scope_get_field(scope, "ground", 0)) == NULL)
+    plan->ground = 0;
+  plan->ground = get_double((char*)data);
+  if (plan->ground != 0)
+    plan->ground = 1;
+}
+
 int		add_plan(t_obj *obj, t_bunny_ini_scope *scope)
 {
   t_plan	plan;
 
+  is_ground(scope, &plan);
   if (get_ini_meta(scope, &plan.meta) == 1)
     return (1);
   if (add(&obj->plan, &obj->nb.plan, plan) == 1)

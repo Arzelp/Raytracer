@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Thu Feb 18 17:59:57 2016 Arthur Josso
-** Last update Sat Apr 23 16:27:20 2016 Arthur Josso
+** Last update Wed Apr 27 13:32:10 2016 Arthur Josso
 */
 
 #include <unistd.h>
@@ -57,7 +57,7 @@ static void	free_obj(t_data *data)
       free_vec_tab(data->obj.mesh[i].vn);
       free_vec_tab(data->obj.mesh[i].vt);
       j = 0;
-      while(data->obj.mesh[i].tri && data->obj.mesh[i].tri[j])
+      while (data->obj.mesh[i].tri && data->obj.mesh[i].tri[j])
 	bunny_free(data->obj.mesh[i].tri[j++]);
       if (data->obj.mesh[i].tri)
 	bunny_free(data->obj.mesh[i].tri);

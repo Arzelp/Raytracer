@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sun Feb  7 19:45:15 2016 Arthur Josso
-** Last update Sat Apr 16 16:31:05 2016 Arthur Josso
+** Last update Wed Apr 27 11:55:29 2016 Arthur Josso
 */
 
 #include <math.h>
@@ -74,7 +74,7 @@ void		phong(t_data *data, t_hit *hit)
       blue += color.argb[BLUE_CMP];
       i++;
     }
-  if (hit->obj_type != GROUND)
+  if (hit->obj_type != PLAN)
     {
       color.argb[RED_CMP] = red / data->obj.nb.light;
       color.argb[GREEN_CMP] = green / data->obj.nb.light;
