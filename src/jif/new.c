@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Wed Apr 13 17:18:37 2016 alies_a
-** Last update Fri Apr 15 10:50:23 2016 alies_a
+** Last update Fri May 13 14:49:08 2016 alies_a
 */
 
 #include <unistd.h>
@@ -25,7 +25,7 @@ t_jif   *jif_new(const char *file, int width, int height, int delay)
 {
   t_jif	*res;
 
-  if ((res = malloc(sizeof(t_jif))) == NULL)
+  if ((res = bunny_malloc(sizeof(t_jif))) == NULL)
     return (NULL);
   res->mode = J_WRITE;
   (res->head).width = width;
@@ -33,13 +33,13 @@ t_jif   *jif_new(const char *file, int width, int height, int delay)
   (res->head).delay = delay;
   if ((res->fd = open(file, O_CREAT | O_WRONLY | O_TRUNC, 0666)) == -1)
     {
-      free(res);
+      bunny_free(res);
       return (NULL);
     }
   if (jif_write_header(res->fd, &(res->head)))
     {
       close(res->fd);
-      free(res);
+      bunny_free(res);
       return (NULL);
     }
   return (res);

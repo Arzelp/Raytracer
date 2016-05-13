@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Wed Apr 20 19:18:33 2016 alies_a
-** Last update Wed Apr 20 19:19:04 2016 alies_a
+** Last update Fri May 13 14:52:34 2016 alies_a
 */
 
 #include <sys/types.h>
@@ -18,7 +18,7 @@ t_cam_path	*cam_path_open(const char *file, t_jif_mode mode)
 {
   t_cam_path	*res;
 
-  if ((res = malloc(sizeof(t_cam_path))) == NULL)
+  if ((res = bunny_malloc(sizeof(t_cam_path))) == NULL)
     return (NULL);
   res->mode = mode;
   if (mode == J_WRITE)

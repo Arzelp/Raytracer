@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Wed Apr 20 19:23:14 2016 alies_a
-** Last update Wed Apr 20 19:23:31 2016 alies_a
+** Last update Fri May 13 14:52:59 2016 alies_a
 */
 
 #include <stdlib.h>
@@ -16,5 +16,5 @@
 void    cam_path_close(t_cam_path *path)
 {
   close(path->fd);
-  free(path);
+  bunny_free(path);
 }
