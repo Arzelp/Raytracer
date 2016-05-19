@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Thu Apr 14 18:52:46 2016 alies_a
-** Last update Thu Apr 14 20:25:31 2016 alies_a
+** Last update Fri May 13 14:56:19 2016 alies_a
 */
 
 #include <stdlib.h>
@@ -15,5 +15,5 @@
 void	jif_close(t_jif *jif)
 {
   close(jif->fd);
-  free(jif);
+  bunny_free(jif);
 }

@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Wed Apr 13 18:23:02 2016 alies_a
-** Last update Thu Apr 14 18:40:43 2016 alies_a
+** Last update Fri May 13 14:48:34 2016 alies_a
 */
 
 #include <sys/types.h>
@@ -25,18 +25,18 @@ t_jif	*jif_open(const char *file)
 {
   t_jif *res;
 
-  if ((res = malloc(sizeof(t_jif))) == NULL)
+  if ((res = bunny_malloc(sizeof(t_jif))) == NULL)
     return (NULL);
   res->mode = J_READ;
   if ((res->fd = open(file, O_RDONLY)) == -1)
     {
-      free(res);
+      bunny_free(res);
       return (NULL);
     }
   if (jif_read(res->fd, &(res->head)))
     {
       close(res->fd);
-      free(res);
+      bunny_free(res);
       return (NULL);
     }
   return (res);
