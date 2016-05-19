@@ -5,16 +5,16 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Tue Feb 16 18:33:58 2016 Arthur Josso
-** Last update Sat Apr 16 16:00:02 2016 Arthur Josso
+** Last update Tue May 10 17:44:29 2016 Arthur Josso
 */
 
 #include <math.h>
 #include "rt.h"
 #include "my.h"
 
-t_vec		vec_product(t_vec *u, t_vec *v)
+t_vec	vec_product(t_vec *u, t_vec *v)
 {
-  t_vec		product;
+  t_vec	product;
 
   product.x = u->y * v->z - u->z * v->y;
   product.y = u->z * v->x - u->x * v->z;

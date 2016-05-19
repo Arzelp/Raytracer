@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Jan 30 17:20:25 2016 Arthur Josso
-** Last update Thu Apr 14 16:20:42 2016 Arthur Josso
+** Last update Mon May  9 15:49:19 2016 Arthur Josso
 */
 
 #include <math.h>
@@ -23,22 +23,7 @@ t_vec	get_rot_vec(t_vec vec, t_vec *angle)
   rot_vec(&vec, angle);
   return (vec);
 }
-/*
-t_ray	get_trans_ray(t_ray ray, t_vec *angle)
-{
-  ray.alpha = get_trans_vec(ray.alpha, angle);
-  ray.beta = get_trans_vec(ray.beta, angle);
-  return (ray);
-}
 
-t_vec	get_trans_vec(t_vec vec, t_vec *angle)
-{
-  vec.x += angle->x;
-  vec.y += angle->y;
-  vec.z += angle->z;
-  return (vec);
-}
-*/
 void			get_ray(t_data *data,
 				t_cam *cam,
 				t_vec *scr,
