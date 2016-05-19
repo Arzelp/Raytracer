@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:33:22 2016 Arthur Josso
-** Last update Thu May 19 17:20:11 2016 Arthur Josso
+** Last update Thu May 19 17:27:04 2016 Arthur Josso
 */
 
 #include "rt.h"
@@ -76,5 +76,6 @@ int		main(int ac, char **av)
   bunny_set_loop_main_function(mainloop);
   bunny_loop(data.win, FPS, &data);
   exit_prog(&data);
+  bunny_set_memory_check(true);
   return (SUCCESS);
 }

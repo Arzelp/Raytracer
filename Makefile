@@ -5,17 +5,17 @@
 ## Login   <arthur.josso@epitech.eu>
 ## 
 ## Started on  Fri Jan 29 18:32:59 2016 Arthur Josso
-## Last update Sun Apr 24 20:51:59 2016 Arthur Josso
+## Last update Thu May 19 18:49:47 2016 Arthur Josso
 ##
 
 NAME    =	raytracer2
 
-CC	= 	gcc -g
+CC	= 	gcc
 
 INC     =       ./include/
 
 CFLAGS 	+=	-I$(INC) \
-		-W -Wall -Wextra -O3
+		-W -Wall -Wextra -Werror -O3
 
 LDFLAGS +=	-I/home/${USER}/.froot/include/ \
                 -L/home/${USER}/.froot/lib/ \
@@ -106,6 +106,7 @@ SRC	= 	$(SRCS)main.c \
 		$(CORE)reflec_vector.c \
 		$(CORE)bump_vec.c \
 		$(EXIT)exit.c \
+		$(EXIT)free_obj.c \
 		$(KEYS)callback.c \
 		$(KEYS)move.c \
 		$(KEYS)height.c \
@@ -153,4 +154,4 @@ fclean:		clean
 
 re:		fclean all
 
-.PHONY:	all clean fclean re
+.PHONY:		all clean fclean re $(NAME)

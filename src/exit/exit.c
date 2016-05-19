@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Thu Feb 18 17:59:57 2016 Arthur Josso
-** Last update Wed Apr 27 13:32:10 2016 Arthur Josso
+** Last update Thu May 19 18:18:44 2016 Arthur Josso
 */
 
 #include <unistd.h>
@@ -72,6 +72,7 @@ void	exit_prog(t_data *data)
   free_tex(data);
   close_fd(data);
   free_obj(data);
+  free_objs(data);
   cam_path_close(data->path);
   if (data->jif != NULL)
     jif_close(data->jif);

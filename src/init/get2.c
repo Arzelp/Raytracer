@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Feb 20 16:27:02 2016 Arthur Josso
-** Last update Thu Apr 21 13:17:15 2016 Arthur Josso
+** Last update Thu May 19 17:36:28 2016 Arthur Josso
 */
 
 #include "rt.h"
@@ -37,6 +37,7 @@ static int	get_ini_perlin(t_bunny_ini_scope *scope, t_perlin *perlin)
   if ((data = bunny_ini_scope_get_field(scope, "perlin", 0)) == NULL)
     {
       perlin->ratio = 0;
+      perlin->tab = NULL;
       return (0);
     }
   perlin->ratio = get_double((char*)data);
