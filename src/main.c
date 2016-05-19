@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:33:22 2016 Arthur Josso
-** Last update Wed Apr 27 13:21:35 2016 Arthur Josso
+** Last update Thu May 19 17:20:11 2016 Arthur Josso
 */
 
 #include "rt.h"
@@ -24,10 +24,8 @@ t_bunny_response        mainloop(void *pt_data)
   data->pix = (data->gen_type & IS_PREVIEW ? data->small : data->big);
   data->gen_type |= IS_PREVIEW;
   gen_scene(data);
-  //
   if (cam_record(data))
     return (EXIT_ON_ERROR);
-  //
   manage_keys(data);
   bunny_blit(&data->win->buffer, &data->big->clipable, &origin);
   bunny_blit(&data->win->buffer, &data->small->clipable, &origin);
