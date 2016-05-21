@@ -5,13 +5,13 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Feb 12 16:12:39 2016 Arthur Josso
-** Last update Thu May 19 18:00:21 2016 Arthur Josso
+** Last update Sat May 21 16:30:38 2016 Arthur Josso
 */
 
 #include "init.h"
 #include "my.h"
 
-static t_parsing	func[] =
+static t_parsing	g_func[] =
   {
     {&add_cam, "camera"},
     {&add_light, "light"},
@@ -33,11 +33,11 @@ static int	get_type(t_obj *obj, t_bunny_ini_scope *scope)
   if ((type = bunny_ini_scope_get_field(scope, "type", 0)) == NULL)
     return (1);
   i = 0;
-  while (func[i].name)
+  while (g_func[i].name)
     {
-      if (my_strcmp((char*)type, func[i].name) == 0)
+      if (my_strcmp((char*)type, g_func[i].name) == 0)
 	{
-	  if (((func[i].func)(obj, scope)) == 1)
+	  if (((g_func[i].func)(obj, scope)) == 1)
 	    return (1);
 	  else
 	    return (0);
