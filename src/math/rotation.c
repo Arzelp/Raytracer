@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Mon Mar  7 15:29:32 2016 Arthur Josso
-** Last update Mon Mar  7 15:29:33 2016 Arthur Josso
+** Last update Sat May 21 17:34:17 2016 Arthur Josso
 */
 
 #include <math.h>
@@ -13,7 +13,7 @@
 
 static void	rot_x(t_vec *vec, float angle)
 {
-  float	tmp;
+  float		tmp;
 
   tmp = vec->y;
   vec->y = tmp * cos(angle) + vec->z * -sin(angle);
@@ -22,7 +22,7 @@ static void	rot_x(t_vec *vec, float angle)
 
 static void    rot_y(t_vec *vec, float angle)
 {
-  float tmp;
+  float		tmp;
 
   tmp = vec->x;
   vec->x = tmp * cos(angle) + vec->z * sin(angle);
@@ -31,7 +31,7 @@ static void    rot_y(t_vec *vec, float angle)
 
 static void    rot_z(t_vec *vec, float angle)
 {
-  float tmp;
+  float		tmp;
 
   tmp = vec->x;
   vec->x = tmp * cos(angle) + vec->y * -sin(angle);
