@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Feb 20 15:23:59 2016 Arthur Josso
-** Last update Wed Apr 27 13:16:10 2016 Arthur Josso
+** Last update Sat May 21 15:46:34 2016 Arthur Josso
 */
 
 #ifndef CORE_H_

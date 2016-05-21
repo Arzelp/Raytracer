@@ -5,7 +5,7 @@
 ## Login   <arthur.josso@epitech.eu>
 ## 
 ## Started on  Fri Jan 29 18:32:59 2016 Arthur Josso
-## Last update Thu May 19 18:49:47 2016 Arthur Josso
+## Last update Sat May 21 16:20:45 2016 Arthur Josso
 ##
 
 NAME    =	raytracer2
@@ -90,7 +90,7 @@ SRC	= 	$(SRCS)main.c \
 		$(LIGHT)light.c \
 		$(LIGHT)phong.c \
 		$(LIGHT)normal_vec.c \
-		$(LIGHT)normal_vec_hard.c \
+		$(LIGHT)normal_vec_2.c \
 		$(LIGHT)reflect.c \
 		$(LIGHT)refract.c \
 		$(LIGHT)antialiasing.c \

@@ -5,12 +5,21 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Tue Feb 16 18:33:58 2016 Arthur Josso
-** Last update Tue May 10 17:44:29 2016 Arthur Josso
+** Last update Sat May 21 15:47:27 2016 Arthur Josso
 */
 
 #include <math.h>
 #include "rt.h"
 #include "my.h"
+
+float		earth_rot(bool inc)
+{
+  static float	rot;
+
+  if (inc)
+    rot += 0.05;
+  return (rot);
+}
 
 t_vec	vec_product(t_vec *u, t_vec *v)
 {
@@ -47,8 +56,8 @@ static void	get_ratio(t_vec *hit,
   n.x = 0;
   n.y = 0;
   n.z = 1;
-  e.x = cos(rot);
-  e.y = sin(rot);
+  e.x = cos(earth_rot(0));
+  e.y = sin(earth_rot(0));
   e.z = 0;
   phi = acos(sec(-get_dot(&n, &p)));
   *y = 1 - (phi / M_PI);

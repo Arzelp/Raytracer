@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:34:35 2016 Arthur Josso
-** Last update Thu May 19 18:20:21 2016 Arthur Josso
+** Last update Sat May 21 15:47:15 2016 Arthur Josso
 */
 
 #ifndef RT_H_
@@ -19,8 +19,6 @@
 # define FPS (30)
 
 # define ANTI_ALIASING (3)
-
-float	rot;
 
 typedef enum    e_is_gen
   {
@@ -120,6 +118,7 @@ void    refract(t_data *data, t_hit *vision_hit);
 void    get_ray(t_data *data, t_cam *cam, t_vec *scr, t_ray *ray);
 t_vec	get_pt_with_k(float k, t_ray *ray);
 t_color	get_tex_at(t_ray *ray, float k, t_sphere *sphere);
+float	earth_rot(bool inc);
 t_color	get_perlin_at(t_vec *pt, t_meta *meta);
 
 void    rot_vec(t_vec *vec, t_vec *angle);

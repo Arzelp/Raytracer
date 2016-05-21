@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:33:22 2016 Arthur Josso
-** Last update Thu May 19 17:27:04 2016 Arthur Josso
+** Last update Sat May 21 15:46:14 2016 Arthur Josso
 */
 
 #include "rt.h"
@@ -20,7 +20,7 @@ t_bunny_response        mainloop(void *pt_data)
   origin.x = 0;
   origin.y = 0;
   data = (t_data*)pt_data;
-  rot += 0.05;
+  earth_rot(1);
   data->pix = (data->gen_type & IS_PREVIEW ? data->small : data->big);
   data->gen_type |= IS_PREVIEW;
   gen_scene(data);
@@ -62,7 +62,6 @@ int		main(int ac, char **av)
   bunny_set_maximum_ram(1e8);
   data.path = NULL;
   data.jif = NULL;
-  rot = 0;
   if (setup(ac, av, &data) == ERROR)
     return (ERROR);
   if (data.path == NULL)

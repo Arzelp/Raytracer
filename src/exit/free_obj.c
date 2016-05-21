@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Thu May 19 18:17:08 2016 Arthur Josso
-** Last update Thu May 19 18:48:36 2016 Arthur Josso
+** Last update Sat May 21 16:20:21 2016 Arthur Josso
 */
 
 #include "rt.h"
@@ -26,6 +26,8 @@ static void	free_list(t_data *data)
     bunny_free(data->obj.torus);
   if (data->obj.nb.mobius)
     bunny_free(data->obj.mobius);
+  if (data->obj.nb.mesh)
+    bunny_free(data->obj.mesh);
 }
 
 static void	free_perlin_tab(t_data *data)
