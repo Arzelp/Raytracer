@@ -5,11 +5,9 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Wed Apr 13 18:23:02 2016 alies_a
-** Last update Fri May 13 14:48:34 2016 alies_a
+** Last update Sat May 21 16:49:33 2016 Arthur Josso
 */
 
-#include <sys/types.h>
-#include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include "jif.h"
