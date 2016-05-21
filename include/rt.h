@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:34:35 2016 Arthur Josso
-** Last update Sat May 21 15:47:15 2016 Arthur Josso
+** Last update Sat May 21 16:47:01 2016 Arthur Josso
 */
 
 #ifndef RT_H_
@@ -13,12 +13,12 @@
 
 # include "core.h"
 
-# define FULL_SCR (0)
-# define W_X (1600)
-# define W_Y (900)
-# define FPS (30)
+# define FULL_SCR	(0)
+# define W_X		(1600)
+# define W_Y		(900)
+# define FPS		(30)
 
-# define ANTI_ALIASING (3)
+# define ANTI_ALIASING	(3)
 
 typedef enum    e_is_gen
   {
@@ -62,7 +62,7 @@ typedef struct s_hit
   void		*obj;
   float		k;
   t_meta	meta;
-} t_hit;
+}		t_hit;
 
 int     gen_scene(t_data *data);
 void	gen_slice(t_data *data, int min, int max);
@@ -73,15 +73,15 @@ t_color	anti_aliasing(t_data *data, t_vec *pos);
 ** Light
 */
 
-# define AMBIENT (0.1)
-# define PREC (0.01)
+# define AMBIENT	(0.1)
+# define PREC		(0.01)
 
-typedef struct s_color_sum
+typedef struct	s_color_sum
 {
-  int	red;
-  int	green;
-  int	blue;
-} t_color_sum;
+  int		red;
+  int		green;
+  int		blue;
+}		t_color_sum;
 
 void    light(t_data *data, t_hit *hit);
 
@@ -89,7 +89,7 @@ void    light(t_data *data, t_hit *hit);
 ** Phong
 */
 
-# define PHONG_SIZE (32)
+# define PHONG_SIZE	(32)
 
 void    phong(t_data *data, t_hit *hit);
 
@@ -103,7 +103,7 @@ void    reflect(t_data *data, t_hit *vision_hit);
 ** Refraction
 */
 
-# define I_AIR (1.00)
+# define I_AIR	(1.00)
 
 void    refract(t_data *data, t_hit *vision_hit);
 
@@ -111,9 +111,9 @@ void    refract(t_data *data, t_hit *vision_hit);
 ** Math - General
 */
 
-# define POW(x) ((x) * (x))
+# define POW(x)		((x) * (x))
 
-# define VIEW_RANGE (500)
+# define VIEW_RANGE	(500)
 
 void    get_ray(t_data *data, t_cam *cam, t_vec *scr, t_ray *ray);
 t_vec	get_pt_with_k(float k, t_ray *ray);
@@ -155,8 +155,8 @@ void	mult_vec(float x, t_vec *v);
 ** Bumping
 */
 
-# define EPSILON (0.001)
-# define SMOOTH (0.1)
+# define EPSILON	(0.001)
+# define SMOOTH		(0.1)
 
 t_vec   bump_vec(t_hit *hit, t_vec n);
 
@@ -184,8 +184,8 @@ float	perlin(int *tab, t_vec *pt, float persistance);
 ** Preview
 */
 
-# define MOVE (0.1)
-# define ROT (M_PI / 128)
+# define MOVE	(0.1)
+# define ROT	(M_PI / 128)
 
 void    interact_cam(t_cam *cam);
 

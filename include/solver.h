@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Wed Apr 13 17:53:18 2016 Arthur Josso
-** Last update Thu Apr 21 13:32:47 2016 Arthur Josso
+** Last update Sat May 21 16:44:59 2016 Arthur Josso
 */
 
 #ifndef SOLVER_H
@@ -18,7 +18,7 @@ typedef	struct	s_cplx
 {
   double	real;
   double	img;
-} t_cplx;
+}		t_cplx;
 
 typedef struct	s_4th_deg
 {
@@ -29,7 +29,7 @@ typedef struct	s_4th_deg
   double	a4;
   int		nb_sol;
   double	x[4];
-} t_4th_deg;
+}		t_4th_deg;
 
 /*
 ** Quartic equation
@@ -55,7 +55,7 @@ typedef struct	s_deg4_utils
   t_cplx	u;
   t_cplx	y;
   t_cplx	w;
-} t_deg4_utils;
+}		t_deg4_utils;
 
 int	solv_deg_4(t_cplx coef[5], t_cplx roots[4]);
 

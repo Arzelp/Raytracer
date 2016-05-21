@@ -5,7 +5,7 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Wed Apr 13 17:17:18 2016 alies_a
-** Last update Thu Apr 21 13:31:22 2016 Arthur Josso
+** Last update Sat May 21 16:43:15 2016 Arthur Josso
 */
 
 #ifndef JIF_H_
@@ -26,18 +26,18 @@ typedef struct	s_jif_header
   uint32_t	delay;
 } __attribute__((packed)) t_jif_header;
 
-typedef enum e_jif_mode
+typedef enum	e_jif_mode
   {
     J_WRITE	= 1,
     J_READ	= 2
-  } t_jif_mode;
+  }		t_jif_mode;
 
 typedef struct	s_jif
 {
   int		fd;
   t_jif_header	head;
   t_jif_mode	mode;
-} t_jif;
+}		t_jif;
 
 /*
 ** Write functions

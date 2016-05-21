@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Thu Apr 21 13:29:10 2016 Arthur Josso
-** Last update Sat Apr 23 16:16:57 2016 Arthur Josso
+** Last update Sat May 21 16:44:28 2016 Arthur Josso
 */
 
 #ifndef MESH_H_
@@ -18,7 +18,7 @@ typedef struct	s_nb_mesh
   int		v;
   int		vn;
   int		vt;
-} t_nb_mesh;
+}		t_nb_mesh;
 
 int	mesh_pars(t_mesh *mesh);
 

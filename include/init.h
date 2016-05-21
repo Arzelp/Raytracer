@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Feb 20 15:26:31 2016 Arthur Josso
-** Last update Thu Apr 21 13:30:23 2016 Arthur Josso
+** Last update Sat May 21 16:42:03 2016 Arthur Josso
 */
 
 #ifndef INIT_H_
@@ -13,11 +13,11 @@
 
 # include "core.h"
 
-typedef struct s_parsing
+typedef struct	s_parsing
 {
-  int   (*func)(t_obj *obj, t_bunny_ini_scope *scope);
-  char  *name;
-} t_parsing;
+  int		(*func)(t_obj *obj, t_bunny_ini_scope *scope);
+  char		*name;
+}		t_parsing;
 
 int     get_ini_vec(t_bunny_ini_scope *scope, const char *field, t_vec *vec);
 int     get_ini_size(t_bunny_ini_scope *scope, const char *field, float *nb);
