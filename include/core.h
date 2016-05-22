@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Feb 20 15:23:59 2016 Arthur Josso
-** Last update Sat May 21 16:41:40 2016 Arthur Josso
+** Last update Sun May 22 14:06:09 2016 alies_a
 */
 
 #ifndef CORE_H_
@@ -15,7 +15,7 @@
 # include "jif.h"
 
 # define MAP(x, ba, ea, bb, eb) ((((ba - x) / (ba - ea)) * (eb - bb)) + bb)
-# define ABS(x)			((x) < 0 ? -(x) : (x))
+# define ABS(x) ((x) < 0 ? -(x) : (x))
 
 typedef struct	s_vec
 {
