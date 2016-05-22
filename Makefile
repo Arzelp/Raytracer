@@ -5,7 +5,7 @@
 ## Login   <arthur.josso@epitech.eu>
 ## 
 ## Started on  Fri Jan 29 18:32:59 2016 Arthur Josso
-## Last update Sun May 22 13:30:00 2016 alies_a
+## Last update Sun May 22 13:37:08 2016 alies_a
 ##
 
 NAME    =	raytracer2
@@ -15,7 +15,7 @@ CC	= 	gcc
 INC     =       ./include/
 
 CFLAGS 	+=	-I$(INC) \
-		-W -Wall -Wextra -O3
+		-W -Wall -Wextra -Werror -O3
 
 LDFLAGS +=	-I/home/${USER}/.froot/include/ \
                 -L/home/${USER}/.froot/lib/ \
