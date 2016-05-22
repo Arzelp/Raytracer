@@ -5,13 +5,13 @@
 ** Login   <alies_a@epitech.net>
 ** 
 ** Started on  Wed Apr 20 14:07:00 2016 alies_a
-** Last update Sat May 21 16:24:14 2016 Arthur Josso
+** Last update Sun May 22 13:36:25 2016 alies_a
 */
 
 #include "core.h"
 #include "keys.h"
 
-static t_key_callback	g_callbacks[] = {
+static t_key_callback g_callbacks[] = {
   {BKS_D, &key_backward, 0},
   {BKS_E, &key_forward, 0},
   {BKS_S, &key_left, 0},
