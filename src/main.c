@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:33:22 2016 Arthur Josso
-** Last update Sat May 21 15:46:14 2016 Arthur Josso
+** Last update Fri Oct  7 14:06:52 2016 alies_a
 */
 
 #include "rt.h"
@@ -37,22 +37,22 @@ static int	setup(int ac, char **av, t_data *data)
 {
   if (ac >= 2)
     {
-      if (init(data, av[1]) == ERROR)
-	return (ERROR);
+      if (init(data, av[1]) == E_ERROR)
+	return (E_ERROR);
       if (ac == 3)
 	{
 	  if ((data->path = cam_path_open(av[2], J_READ)) == NULL)
-	    return (ERROR);
+	    return (E_ERROR);
 	  if ((data->jif = jif_new("gen.jif", W_X, W_Y, 10)) == NULL)
-	    return (ERROR);
+	    return (E_ERROR);
 	}
     }
   else
     {
-      if (init(data, "./demo/demo1.ini") == ERROR)
-	return (ERROR);
+      if (init(data, "./demo/demo1.ini") == E_ERROR)
+	return (E_ERROR);
     }
-  return (SUCCESS);
+  return (E_SUCCESS);
 }
 
 int		main(int ac, char **av)
@@ -62,12 +62,12 @@ int		main(int ac, char **av)
   bunny_set_maximum_ram(1e8);
   data.path = NULL;
   data.jif = NULL;
-  if (setup(ac, av, &data) == ERROR)
-    return (ERROR);
+  if (setup(ac, av, &data) == E_ERROR)
+    return (E_ERROR);
   if (data.path == NULL)
     {
       if ((data.path = cam_path_open("camera.path", J_WRITE)) == NULL)
-	return (ERROR);
+	return (E_ERROR);
     }
   if (data.jif != NULL)
     cam_gen(&data);
@@ -76,5 +76,5 @@ int		main(int ac, char **av)
   bunny_loop(data.win, FPS, &data);
   exit_prog(&data);
   bunny_set_memory_check(true);
-  return (SUCCESS);
+  return (E_SUCCESS);
 }

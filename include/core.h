@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Feb 20 15:23:59 2016 Arthur Josso
-** Last update Sun May 22 14:06:09 2016 alies_a
+** Last update Fri Oct  7 14:04:22 2016 alies_a
 */
 
 #ifndef CORE_H_
@@ -178,8 +178,8 @@ typedef struct		s_data
 
 typedef enum    e_exit
   {
-    SUCCESS     = 0,
-    ERROR       = 1
+    E_SUCCESS     = 0,
+    E_ERROR       = 1
   }             t_exit;
 
 #endif

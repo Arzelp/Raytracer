@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Feb 20 15:53:09 2016 Arthur Josso
-** Last update Sat Feb 20 15:53:09 2016 Arthur Josso
+** Last update Fri Oct  7 14:07:10 2016 alies_a
 */
 
 #include <pthread.h>
@@ -65,5 +65,5 @@ int		gen_scene(t_data *data)
   pthread_join(thr_2, NULL);
   pthread_join(thr_3, NULL);
   pthread_join(thr_4, NULL);
-  return (SUCCESS);
+  return (E_SUCCESS);
 }

@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jan 29 18:34:35 2016 Arthur Josso
-** Last update Sat May 21 16:47:01 2016 Arthur Josso
+** Last update Thu May 26 23:49:03 2016 alies_a
 */
 
 #ifndef RT_H_
@@ -185,7 +185,7 @@ float	perlin(int *tab, t_vec *pt, float persistance);
 */
 
 # define MOVE	(0.1)
-# define ROT	(M_PI / 128)
+# define ROT	(M_PI / 428)
 
 void    interact_cam(t_cam *cam);
 

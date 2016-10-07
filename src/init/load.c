@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Feb 12 16:12:39 2016 Arthur Josso
-** Last update Sat May 21 16:30:38 2016 Arthur Josso
+** Last update Fri Oct  7 14:04:49 2016 alies_a
 */
 
 #include "init.h"
@@ -77,9 +77,9 @@ int		load_scene(t_obj *obj, const char *file)
 
   init_nb_obj(obj);
   if ((ini = bunny_load_ini(file)) == NULL)
-    return (ERROR);
+    return (E_ERROR);
   if (get_scope(obj, ini) == 1)
-    return (ERROR);
+    return (E_ERROR);
   bunny_delete_ini(ini);
-  return (SUCCESS);
+  return (E_SUCCESS);
 }
